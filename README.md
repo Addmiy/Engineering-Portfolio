@@ -10,9 +10,9 @@ I am using this repository to showcase projects for software engineering interns
 
 GYLIO, short for Get Your Life In Order, is a character-development productivity prototype designed to help users begin their day with intentional action instead of distraction.
 
-The first version includes a morning activation flow, trait-based motivational sequencing, a structured execution dashboard, priority task tracking, responsive interface design, and PWA foundation files.
+The first version includes a morning activation flow, trait-based motivational sequencing, a structured execution dashboard, priority task tracking, responsive interface design, and PWA foundation files. Version 2 rebuilds the concept as an Expo React Native mobile app with alarm setup, notification-based activation, Supabase video retrieval, lesson persistence, calendar, daily tasks, and journaling.
 
-**Skills demonstrated:** HTML, CSS, JavaScript, responsive UI design, DOM interaction, state-driven rendering, PWA basics, product brief interpretation, and technical documentation.
+**Skills demonstrated:** HTML, CSS, JavaScript, React Native, Expo, TypeScript, Expo Router, Supabase integration, local persistence, notification scheduling, responsive UI design, product brief interpretation, and technical documentation.
 
 [View the GYLIO case study](./project%202%20-%20GYLIO%20App/)
 
