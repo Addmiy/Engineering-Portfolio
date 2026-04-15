@@ -30,21 +30,25 @@ The prototype focuses on a calm but decisive user experience. It combines a trai
 
 ## Evidence
 
-### Desktop dashboard
+Evidence is organised by app version so future UI revisions can be reviewed alongside the matching source-code snapshot.
 
-![Desktop dashboard](./evidence/01-dashboard-desktop.png)
+### Version 1
 
-### Morning activation reel
+#### Desktop dashboard
 
-![Morning activation reel](./evidence/02-morning-activation-modal.png)
+![Desktop dashboard](./evidence/version%201/01-dashboard-desktop.png)
 
-### Trait-based training selection
+#### Morning activation reel
 
-![Trait selection](./evidence/03-trait-selection.png)
+![Morning activation reel](./evidence/version%201/02-morning-activation-modal.png)
 
-### Responsive mobile layout
+#### Trait-based training selection
 
-![Mobile layout](./evidence/04-mobile-responsive-layout.png)
+![Trait selection](./evidence/version%201/03-trait-selection.png)
+
+#### Responsive mobile layout
+
+![Mobile layout](./evidence/version%201/04-mobile-responsive-layout.png)
 
 ## Project Files
 
