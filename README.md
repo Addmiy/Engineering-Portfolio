@@ -26,6 +26,16 @@ The first version includes a morning activation flow, trait-based motivational s
 
 [View the GYLIO case study](./project%202%20-%20GYLIO%20App/)
 
+### Project 3 - Gearbox Model
+
+The Gearbox Model is a VCE systems engineering project focused on creating a classroom learning tool that makes gear ratios, shaft alignment, synchroniser movement, and gearbox speed changes visible.
+
+The project package includes the full systems engineering report, a project overview PDF, generated block and flow diagrams, CAD evidence extracted from the report, and notes explaining where original CAD or code source files were not supplied.
+
+**Skills demonstrated:** systems engineering documentation, concept evaluation, mechanical design, gear-ratio planning, Fusion 360 modelling, 3D printing, workshop fabrication, diagnostic testing, design iteration, and technical communication.
+
+[View the Gearbox Model case study](./Project%203%20-%20Gearbox%20Model/)
+
 ## Portfolio Structure
 
 Each project folder is structured to make review straightforward:
