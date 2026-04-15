@@ -36,6 +36,16 @@ The project package includes the full systems engineering report, a project over
 
 [View the Gearbox Model case study](./Project%203%20-%20Gearbox%20Model/)
 
+### Project 4 - Faraday Copilot
+
+Faraday Copilot is a Manifest V3 Chrome extension prototype that embeds AI research, writing, citation, Google Docs, file, and graphing workflows directly into the browser side panel and a fullscreen workspace.
+
+The project package includes a complete version history from the original local Chrome AI prototype through the OpenRouter-powered builds, a project overview, professional design brief, technical architecture notes, employer summary, UI screenshots, code evidence, and architecture diagrams.
+
+**Skills demonstrated:** Chrome extension development, JavaScript, HTML, CSS, Manifest V3 service workers, content scripts, browser messaging, OpenRouter API integration, Google Apps Script integration, local extension storage, UI iteration, technical documentation, canvas graph rendering, mathematical expression parsing, and AI workflow design.
+
+[View the Faraday Copilot case study](./project%204%20-%20Faraday%20Copilot/)
+
 ## Portfolio Structure
 
 Each project folder is structured to make review straightforward:
