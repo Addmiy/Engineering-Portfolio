@@ -1,4 +1,4 @@
-# Engineering Portfolio - Addmiy
+# Engineering Portfolio
 
 This portfolio presents a focused collection of engineering and software projects built to demonstrate practical implementation skill, product thinking, technical communication, and the ability to turn a concept into a working prototype.
 
