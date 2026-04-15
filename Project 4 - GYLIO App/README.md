@@ -1,4 +1,4 @@
-# Project 2 - GYLIO App
+# Project 4 - GYLIO App
 
 GYLIO, short for Get Your Life In Order, is a productivity app built around a behavioural design brief: help users start their day with intentional action instead of distraction.
 

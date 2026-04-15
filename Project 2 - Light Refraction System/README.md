@@ -1,4 +1,4 @@
-# Project 1: Light Refraction System Tool
+# Project 2 - Light Refraction System
 
 The Light Refraction System Tool is a systems engineering project focused on modelling, explaining, and communicating a light-path control system using diagrams, CAD models, technical documentation, and supporting design evidence.
 

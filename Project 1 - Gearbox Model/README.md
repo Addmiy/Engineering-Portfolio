@@ -1,4 +1,4 @@
-# Project 3: Gearbox Model
+# Project 1 - Gearbox Model
 
 The Gearbox Model is a VCE systems engineering project focused on designing, building, testing, and evaluating a classroom learning tool for mechanical gear ratios and gearbox behaviour.
 

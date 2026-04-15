@@ -1,4 +1,4 @@
-# Project 4 - Faraday Copilot
+# Project 3 - Faraday Copilot
 
 Faraday Copilot is a Manifest V3 Chrome extension prototype for a browser-native AI copilot. It brings page-aware chat, highlighted-text actions, citations, Google Docs assistance, file-aware prompts, model switching, and a maths graphing workspace into the Chrome side panel and a fullscreen app view.
 
