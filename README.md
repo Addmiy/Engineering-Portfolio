@@ -6,6 +6,16 @@ I am using this repository to showcase projects for software engineering interns
 
 ## Featured Projects
 
+### Project 1 - Light Refraction System Tool
+
+The Light Refraction System Tool is a systems engineering project focused on modelling, explaining, and communicating a light-path control system through reports, block diagrams, flowcharts, and CAD model revisions.
+
+The project package includes a project overview, full systems engineering report, Draw.io block flow diagram, high-level flowchart, Fusion 360 CAD models, and supporting design evidence.
+
+**Skills demonstrated:** systems engineering documentation, technical communication, block flow diagramming, flowchart design, CAD modelling, Fusion 360 design iteration, project organisation, and engineering portfolio presentation.
+
+[View the Light Refraction System Tool case study](./project%201%20-%20Light%20Refraction%20System%20Tool/)
+
 ### Project 2 - GYLIO App
 
 GYLIO, short for Get Your Life In Order, is a character-development productivity prototype designed to help users begin their day with intentional action instead of distraction.
