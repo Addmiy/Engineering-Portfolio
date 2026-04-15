@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GYLIO is a character-training productivity app built to prime disciplined action at the start of each day."
+    />
+    <meta name="theme-color" content="#11181c" />
+    <title>GYLIO | Get Your Life In Order</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-glow ambient-glow-left"></div>
+    <div class="ambient-glow ambient-glow-right"></div>
+
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">G/</div>
+          <div class="brand-copy">
+            <p class="eyebrow">Character Training System</p>
+            <h1>GYLIO</h1>
+          </div>
+        </div>
+
+        <div class="status-strip">
+          <div class="status-pill">
+            <span class="status-label">Current Date</span>
+            <strong id="current-date">Loading...</strong>
+          </div>
+          <div class="status-pill">
+            <span class="status-label">System Time</span>
+            <strong id="current-time">--:--</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero-panel surface">
+        <div class="hero-copy">
+          <p class="eyebrow">Morning Behavioural Priming</p>
+          <h2>Train the person who starts the day.</h2>
+          <p class="hero-text">
+            GYLIO is built around the highest-leverage decision point in the day:
+            the first minutes after waking. Every session reinforces identity,
+            sharpens intention, and channels that energy directly into execution.
+          </p>
+        </div>
+
+        <div class="hero-protocol">
+          <span class="protocol-label">Wake Protocol</span>
+          <div class="protocol-line">
+            <span>Alarm</span>
+            <span>Screen Wake</span>
+            <span>Training Reel</span>
+            <span>First Action</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <article class="summary-card surface">
+          <span class="summary-label">Next Activation</span>
+          <strong id="countdown-display">--h --m</strong>
+          <p id="alarm-readout">Alarm set for 06:15</p>
+        </article>
+
+        <article class="summary-card surface">
+          <span class="summary-label">Selected Trait</span>
+          <strong id="summary-trait">Discipline</strong>
+          <p id="summary-mantra">Structure beats mood.</p>
+        </article>
+
+        <article class="summary-card surface">
+          <span class="summary-label">Cadence</span>
+          <strong id="streak-display">19 day run</strong>
+          <p>Daily repetition builds identity credibility.</p>
+        </article>
+
+        <article class="summary-card surface">
+          <span class="summary-label">Execution Score</span>
+          <strong id="execution-score">0%</strong>
+          <p id="completion-caption">0 of 0 priorities complete today.</p>
+        </article>
+      </section>
+
+      <section class="workspace-grid">
+        <article class="activation-panel surface">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Primary System</p>
+              <h3>Morning Activation</h3>
+            </div>
+            <button class="primary-button" id="launch-activation" type="button">
+              Launch drill
+            </button>
+          </div>
+
+          <div class="activation-layout">
+            <div class="activation-controls">
+              <label class="field-label" for="alarm-time">Scheduled alarm</label>
+              <input id="alarm-time" class="time-input" type="time" value="06:15" />
+
+              <div>
+                <p class="field-label">Character focus</p>
+                <div id="trait-selector" class="trait-selector"></div>
+              </div>
+
+              <div class="activation-brief">
+                <p class="brief-label">Daily objective</p>
+                <h4 id="brief-title">Discipline</h4>
+                <p id="brief-mantra">
+                  Structure your first choice so the rest of the day has less room to drift.
+                </p>
+              </div>
+
+              <div class="trigger-card">
+                <div>
+                  <span class="field-label">Trigger path</span>
+                  <p>Alarm -> screen wake -> GYLIO reel -> first decisive action.</p>
+                </div>
+                <div>
+                  <span class="field-label">Behaviour target</span>
+                  <p id="behaviour-target">Move before mood negotiates.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="activation-preview">
+              <div class="preview-topline">
+                <span class="preview-badge">Activation preview</span>
+                <span id="segment-count">Segment 1 / 3</span>
+              </div>
+
+              <div class="preview-stage">
+                <div class="signal-bars" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <p class="preview-trait" id="preview-trait">Discipline</p>
+                <h4 id="preview-headline">Start before comfort votes.</h4>
+                <p id="preview-copy">
+                  Your first decision teaches the rest of the day what is allowed.
+                </p>
+              </div>
+
+              <div class="sequence-list" id="sequence-list"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="schedule-panel surface">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Secondary System</p>
+              <h3>Structured Execution</h3>
+            </div>
+            <p class="panel-note" id="next-block-note">Next block begins at 08:00</p>
+          </div>
+
+          <div class="calendar-strip" id="calendar-strip"></div>
+          <div class="schedule-timeline" id="schedule-timeline"></div>
+        </article>
+
+        <article class="tasks-panel surface">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Action Queue</p>
+              <h3>Priority Tasks</h3>
+            </div>
+            <span class="panel-note">Minimal friction. Maximum clarity.</span>
+          </div>
+
+          <form class="task-form" id="task-form">
+            <input
+              id="task-input"
+              type="text"
+              maxlength="80"
+              placeholder="Add the next action that actually matters"
+              aria-label="Add a task"
+            />
+            <select id="task-tag" aria-label="Task category">
+              <option value="Deep Work">Deep Work</option>
+              <option value="Admin">Admin</option>
+              <option value="Health">Health</option>
+              <option value="Planning">Planning</option>
+            </select>
+            <button class="secondary-button" type="submit">Add</button>
+          </form>
+
+          <div class="task-list" id="task-list"></div>
+        </article>
+
+        <article class="doctrine-panel surface">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Operating Doctrine</p>
+              <h3>What This Product Trains</h3>
+            </div>
+          </div>
+
+          <div class="doctrine-copy">
+            <p>
+              GYLIO does not chase attention. It conditions reliable action by
+              making the day begin with identity, then reducing the distance
+              between intention and execution.
+            </p>
+          </div>
+
+          <div class="principles">
+            <article>
+              <span class="principle-number">01</span>
+              <h4>Interrupt autopilot</h4>
+              <p>Morning activation overrides the reactive default state.</p>
+            </article>
+            <article>
+              <span class="principle-number">02</span>
+              <h4>Reinforce identity</h4>
+              <p>Traits are trained through repetition, not admired passively.</p>
+            </article>
+            <article>
+              <span class="principle-number">03</span>
+              <h4>Support execution</h4>
+              <p>Calendar structure and priority tasks keep momentum practical.</p>
+            </article>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div class="activation-modal" id="activation-modal" aria-hidden="true">
+      <div class="modal-scrim" id="modal-close"></div>
+      <section class="modal-stage">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Wake Session</p>
+            <h3 id="modal-trait">Discipline</h3>
+          </div>
+          <button class="icon-button" id="close-activation" type="button" aria-label="Close activation">
+            Close
+          </button>
+        </div>
+
+        <div class="modal-content">
+          <div class="modal-meter">
+            <span>Trait conditioning reel</span>
+            <strong id="modal-segment-index">1 / 3</strong>
+          </div>
+
+          <div class="modal-visual">
+            <div class="visual-rings" aria-hidden="true"></div>
+            <p class="modal-kicker" id="modal-kicker">Wake with structure.</p>
+            <h4 id="modal-headline">Start before comfort votes.</h4>
+            <p id="modal-copy">
+              Your first decision teaches the rest of the day what is allowed.
+            </p>
+          </div>
+
+          <div class="modal-progress">
+            <span id="modal-progress-label">Preparing sequence</span>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="modal-controls">
+            <button class="secondary-button" id="pause-activation" type="button">
+              Pause
+            </button>
+            <button class="secondary-button" id="next-segment" type="button">
+              Next segment
+            </button>
+            <button class="primary-button" id="complete-activation" type="button">
+              Begin the day
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

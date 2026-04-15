@@ -1,0 +1,17 @@
+{
+  "name": "GYLIO",
+  "short_name": "GYLIO",
+  "description": "A daily character-training system that primes intentional mornings and structured execution.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1013",
+  "theme_color": "#11181c",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
