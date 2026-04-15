@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Faraday Copilot",
+  "version": "1.4.3",
+  "description": "OpenRouter-powered Chrome copilot with improved math rendering, a smoother graph studio, and a rebuilt fullscreen workspace.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "sidePanel",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://openrouter.ai/*",
+    "https://docs.google.com/*",
+    "https://script.google.com/*",
+    "https://script.googleusercontent.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Faraday Copilot",
+    "default_popup": "popup.html"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "lib/citations.js",
+        "content-script.js"
+      ],
+      "css": [
+        "content-style.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "google-docs-bridge.js"
+      ],
+      "matches": [
+        "https://docs.google.com/*"
+      ]
+    }
+  ]
+}

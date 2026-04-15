@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faraday Copilot</title>
+    <style>
+      body { margin: 0; width: 330px; font: 14px Inter, Arial, sans-serif; background: #09111e; color: #eaf2ff; }
+      .wrap { padding: 14px; }
+      h1 { font-size: 18px; margin: 0 0 6px; }
+      p { color: #9fb3d2; margin: 0 0 12px; font-size: 12px; }
+      button, select { width: 100%; box-sizing: border-box; border-radius: 12px; padding: 10px 12px; font: inherit; }
+      button { border: 0; background: #7ac6ff; color: #03131f; font-weight: 700; cursor: pointer; margin-bottom: 10px; }
+      select { border: 1px solid #294166; background: #091426; color: #f5f8ff; margin-bottom: 10px; }
+      .ghost { background: #16253f; color: #eaf2ff; border: 1px solid #2a3f65; }
+      .hint { color: #90a8ca; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Faraday</h1>
+      <p>Launch the copilot, pick a citation style, and pretend your browser is finally pulling its weight.</p>
+      <button id="openSidePanel">Open side panel</button>
+      <select id="quickCitationStyle">
+        <option value="APA">APA</option>
+        <option value="MLA">MLA</option>
+        <option value="Harvard">Harvard</option>
+        <option value="Chicago">Chicago</option>
+        <option value="IEEE">IEEE</option>
+      </select>
+      <button id="openOptions" class="ghost">Open settings</button>
+      <div class="hint">Add your OpenRouter API key in Settings. Default model: Hunter Alpha.</div>
+    </div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

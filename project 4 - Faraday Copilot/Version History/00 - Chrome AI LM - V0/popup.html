@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seamless AI</title>
+    <style>
+      body {
+        width: 320px;
+        margin: 0;
+        background: #0b1220;
+        color: #edf4ff;
+        font-family: Inter, Arial, sans-serif;
+        padding: 16px;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+      p {
+        margin: 0 0 12px;
+        color: #9eb4d3;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+      button, select {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 12px;
+        border: 1px solid #30496f;
+        background: #0b1527;
+        color: #f8fbff;
+        padding: 10px 12px;
+        font: inherit;
+        margin-top: 10px;
+      }
+      button {
+        cursor: pointer;
+        background: #71b3ff;
+        color: #071321;
+        border: 0;
+        font-weight: 700;
+      }
+      small {
+        display: block;
+        margin-top: 12px;
+        color: #9eb4d3;
+        line-height: 1.45;
+      }
+      #aiStatus {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: #10192b;
+        border: 1px solid #223353;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Seamless AI</h1>
+    <p>Local Chrome AI, side panel chat, citations, and Docs help without the API key tax.</p>
+    <button id="openSidePanel">Open side panel</button>
+    <select id="quickCitationStyle">
+      <option value="APA">APA</option>
+      <option value="MLA">MLA</option>
+      <option value="Harvard">Harvard</option>
+      <option value="Chicago">Chicago</option>
+      <option value="IEEE">IEEE</option>
+    </select>
+    <div id="aiStatus">Checking local AI status...</div>
+    <button id="openOptions">Open Settings</button>
+    <small>Use Chrome 138+ for the built-in Prompt API. If the model is not ready, Chrome may need to download it first, because apparently nothing can just work immediately.</small>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

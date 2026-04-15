@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Seamless AI Search Enhancer Local",
+  "version": "1.0.0",
+  "description": "A Chrome side panel assistant using Chrome's built-in local AI for page analysis, citations, and Google Docs help.",
+  "minimum_chrome_version": "138",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "sidePanel",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Seamless AI Search Enhancer Local",
+    "default_popup": "popup.html"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "lib/storage.js",
+        "lib/citations.js",
+        "content-script.js"
+      ],
+      "css": ["content-style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["google-docs-bridge.js"],
+      "matches": ["https://docs.google.com/*"]
+    }
+  ]
+}

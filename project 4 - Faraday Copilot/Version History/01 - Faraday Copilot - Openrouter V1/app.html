@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faraday Copilot Fullscreen</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body class="full-app">
+    <div class="app" id="appRoot">
+      <header class="topbar">
+        <div>
+          <h1>Faraday Copilot</h1>
+          <p>Context-aware browsing, study tools, Docs help, and enough structure to survive your tabs.</p>
+        </div>
+        <div class="inline-actions"><button id="openFullscreenBtn" class="ghost hidden">Open full tab</button><button id="clearChatBtn" class="ghost">Clear chat</button></div>
+      </header>
+
+      <section class="card controls-grid">
+        <div>
+          <label for="modelSelect">Model</label>
+          <select id="modelSelect"></select>
+          <div id="modelMeta" class="hint"></div>
+        </div>
+        <div>
+          <label for="personalitySelect">Personality</label>
+          <select id="personalitySelect"></select>
+        </div>
+      </section>
+
+      <section class="card page-card">
+        <div class="section-head">
+          <h2>Current page</h2>
+          <div class="inline-actions">
+            <button id="refreshContextBtn">Refresh context</button>
+            <button id="clearContextBtn" class="ghost">Clear context</button>
+          </div>
+        </div>
+        <div id="pageContextMeta" class="meta-box">No page context loaded yet.</div>
+        <div class="quick-actions">
+          <button data-quick="summarise">Summarise page</button>
+          <button data-quick="keypoints">Key points</button>
+          <button data-quick="citation">Cite page</button>
+          <button data-quick="notes">Study notes</button>
+          <button data-quick="quiz">Quiz</button>
+          <button data-quick="flashcards">Flashcards</button>
+          <button data-quick="docs">Docs writing help</button>
+        </div>
+      </section>
+
+      <section class="card uploader-card">
+        <div class="section-head">
+          <h2>Files</h2>
+          <label class="file-btn">
+            Add file
+            <input id="fileInput" type="file" multiple />
+          </label>
+        </div>
+        <div id="fileList" class="pill-list empty">No files added.</div>
+      </section>
+
+      <section id="graphCard" class="card graph-card hidden">
+        <div class="section-head">
+          <h2>Graph</h2>
+          <div class="inline-actions">
+            <button id="expandGraphBtn">Expand</button>
+            <button id="closeGraphBtn" class="ghost">Close</button>
+          </div>
+        </div>
+        <div class="graph-controls">
+          <input id="graphExpression" type="text" placeholder="e.g. sin(x), x^2 - 3, 1/(x-2)" />
+          <button id="plotGraphBtn">Plot</button>
+        </div>
+        <canvas id="graphCanvas" width="700" height="420"></canvas>
+        <div id="graphMeta" class="hint">Scroll to zoom, drag to pan, hover to inspect. Because static graphs are for surrender.</div>
+      </section>
+
+      <section id="chatLog" class="card chat-log"></section>
+
+      <form id="composer" class="card composer">
+        <textarea id="chatInput" rows="5" placeholder="Ask about the page, selection, your files, writing, maths, code, or type /graph x^2 - 4x + 3"></textarea>
+        <div class="composer-actions">
+          <span class="hint">Enter sends. Shift + Enter adds a line break.</span>
+          <button type="submit">Send</button>
+        </div>
+      </form>
+
+      <section class="card citations-card">
+        <div class="section-head">
+          <h2>Citation notes</h2>
+          <button id="copyCitationsBtn" class="ghost">Copy all</button>
+        </div>
+        <div id="citationsList" class="citations-list empty">No saved citations yet.</div>
+      </section>
+    </div>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

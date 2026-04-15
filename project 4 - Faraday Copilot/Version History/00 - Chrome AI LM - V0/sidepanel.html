@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seamless AI Side Panel</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <h1>Seamless AI</h1>
+          <p>Context-aware browsing, citations, and Docs help powered by Chrome's local AI instead of another hungry cloud bill.</p>
+        </div>
+        <button id="refreshContextBtn">Refresh page context</button>
+      </header>
+
+      <section class="controls card">
+        <div>
+          <label for="botSelect">Bot</label>
+          <select id="botSelect"></select>
+        </div>
+        <div>
+          <label for="personalitySelect">Personality</label>
+          <select id="personalitySelect">
+            <option value="formal-academic">Formal academic assistant</option>
+            <option value="concise-analyst">Concise research analyst</option>
+            <option value="friendly-tutor">Friendly tutor</option>
+            <option value="professional-editor">Professional editor</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Local AI status</h2>
+        <div id="aiStatus">Checking local AI status...</div>
+        <div class="toolbar">
+          <button id="refreshAiStatusBtn">Refresh AI status</button>
+          <button id="clearChatBtn">Clear chat</button>
+        </div>
+      </section>
+
+      <section class="page-summary card">
+        <h2>Current page</h2>
+        <div id="pageContextMeta">No page context loaded yet.</div>
+        <div class="quick-actions">
+          <button data-quick="summarise">Summarise page</button>
+          <button data-quick="keypoints">Extract key points</button>
+          <button data-quick="citation">Generate citation</button>
+          <button data-quick="docs">Docs writing help</button>
+        </div>
+      </section>
+
+      <section id="chatLog" class="chatLog card"></section>
+
+      <form id="composer" class="composer">
+        <textarea id="chatInput" rows="4" placeholder="Ask about the current page, the selected text, or your document draft."></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

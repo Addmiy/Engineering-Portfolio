@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faraday Copilot</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body class="full-app">
+    <div class="app-shell" id="appRoot">
+      <main class="workspace-shell">
+        <section class="main-panel card glass-panel">
+          <header class="hero-section">
+            <div class="hero-badge">👋</div>
+            <div class="hero-copy">
+              <h1 id="greetingTitle">Hi, good evening!</h1>
+              <p id="assistantIdentity">I'm Faraday, your AI copilot.</p>
+            </div>
+            <div class="hero-actions">
+              <button id="openFullscreenBtn" class="ghost hidden">Opened in full tab</button>
+              <button id="clearChatBtn" class="ghost">Clear chat</button>
+            </div>
+          </header>
+
+          <section class="control-strip">
+            <div class="select-pill">
+              <select id="personalitySelect" aria-label="Personality"></select>
+              <span class="chevron">⌄</span>
+            </div>
+            <button id="pageContextToggleBtn" class="segment-btn utility-toggle-btn" type="button">📄 <span>Page Context</span></button>
+            <button id="contextPinBtn" class="segment-btn utility-toggle-btn" type="button">📌 <span>Context Pinned</span></button>
+          </section>
+
+          <section class="quick-action-wrap">
+            <div class="quick-action-bar">
+              <button id="moreToolsBtn" class="quick-plus" type="button">+</button>
+              <button data-quick="quiz" type="button">🗒️ <span>Quiz</span></button>
+              <button data-quick="flashcards" type="button">📖 <span>Flashcards</span></button>
+              <button data-quick="notes" type="button">📝 <span>Notes</span></button>
+              <label class="quick-upload" for="fileInput">⬆️ <span>Upload</span></label>
+            </div>
+            <div id="expandedTools" class="expanded-tools hidden">
+              <button data-quick="summarise" type="button">Summarise</button>
+              <button data-quick="keypoints" type="button">Key points</button>
+              <button data-quick="docs" type="button">Docs help</button>
+              <button id="uploadImageBtn" type="button">Upload image</button>
+            </div>
+          </section>
+
+          <main class="view-stack">
+            <section class="view-panel active" data-view-panel="chat">
+              <section class="chat-workspace card workspace-card">
+                <div class="chat-workspace-header">
+                  <div class="workspace-title">Workspace</div>
+                  <div class="workspace-status">Press '/' for commands</div>
+                </div>
+
+                <section id="utilityDrawer" class="utility-drawer hidden" aria-live="polite">
+                  <div class="utility-tabs">
+                    <button type="button" class="utility-tab active" data-utility="page">Page</button>
+                    <button type="button" class="utility-tab" data-utility="files">Files</button>
+                    <button type="button" class="utility-tab" data-utility="citations">Citations</button>
+                    <button type="button" id="closeUtilityDrawerBtn" class="utility-close ghost">Close</button>
+                  </div>
+
+                  <section class="utility-panel active" data-utility-panel="page">
+                    <div class="section-head compact-head">
+                      <h2>Current page</h2>
+                      <div class="inline-actions">
+                        <button id="refreshContextBtn" type="button">Refresh</button>
+                        <button id="clearContextBtn" class="ghost" type="button">Clear</button>
+                      </div>
+                    </div>
+                    <div id="pageContextMeta" class="meta-box">No page context loaded yet.</div>
+                    <div class="page-action-grid">
+                      <button data-quick="summarise" type="button">Summarise page</button>
+                      <button data-quick="keypoints" type="button">Key points</button>
+                      <button data-quick="citation" type="button">Cite page</button>
+                      <button data-quick="notes" type="button">Study notes</button>
+                      <button data-quick="quiz" type="button">Quiz</button>
+                      <button data-quick="flashcards" type="button">Flashcards</button>
+                      <button data-quick="docs" type="button">Docs writing help</button>
+                    </div>
+                  </section>
+
+                  <section class="utility-panel" data-utility-panel="files">
+                    <div class="section-head compact-head">
+                      <h2>Files</h2>
+                      <label class="file-btn" for="fileInput">Add file</label>
+                    </div>
+                    <input id="fileInput" type="file" multiple hidden />
+                    <div id="fileList" class="pill-list empty">No files added.</div>
+                  </section>
+
+                  <section class="utility-panel" data-utility-panel="citations">
+                    <div class="section-head compact-head">
+                      <h2>Citation notes</h2>
+                      <button id="copyCitationsBtn" class="ghost" type="button">Copy all</button>
+                    </div>
+                    <div id="citationsList" class="citations-list empty">No saved citations yet.</div>
+                  </section>
+                </section>
+
+                <section id="chatLog" class="chat-log"></section>
+
+                <section class="composer-panel">
+                  <textarea id="chatInput" rows="6" placeholder="Ask me anything, press '/' for commands"></textarea>
+                  <div class="input-toolbar">
+                    <div class="toolbar-left">
+                      <button id="micBtn" class="icon-btn ghost" type="button" title="Voice input">🎙️</button>
+                      <button id="enhancePromptBtn" class="icon-btn ghost" type="button" title="Enhance prompt">🪄</button>
+                      <button id="layoutModeBtn" class="icon-btn ghost" type="button" title="Response layout">▦</button>
+                      <button id="webToggleBtn" class="icon-btn ghost" type="button" title="Web aware mode">🌐</button>
+                      <button id="designToggleBtn" class="icon-btn ghost" type="button" title="Design mode">🎨</button>
+                      <button id="splitViewBtn" class="icon-btn ghost" type="button" title="Split with graph">🪟</button>
+                    </div>
+                    <div class="toolbar-right">
+                      <div id="thinkingIndicator" class="thinking-indicator">✦ Ready</div>
+                      <button id="sendPromptBtn" class="send-btn" type="button">➤</button>
+                    </div>
+                  </div>
+                </section>
+              </section>
+            </section>
+
+            <section class="view-panel" data-view-panel="graph">
+              <section id="graphCard" class="card graph-card">
+                <div class="section-head">
+                  <h2>Faraday Graph Engine</h2>
+                  <div class="inline-actions">
+                    <button id="resetGraphBtn" class="ghost" type="button">Reset view</button>
+                    <button id="expandGraphBtn" type="button">Already fullscreen</button>
+                  </div>
+                </div>
+                <div class="hint graph-help">Plot functions, inspect intercepts, stationary points, intersections, and actually interact with the thing instead of squinting at a frozen rectangle.</div>
+                <div class="graph-controls graph-controls-wrap">
+                  <textarea id="graphExpression" rows="3" placeholder="y = x^2 - 4x + 3&#10;y = 2x - 1"></textarea>
+                  <div class="graph-button-column">
+                    <button id="plotGraphBtn" type="button">Plot</button>
+                    <button id="closeGraphBtn" class="ghost" type="button">Clear</button>
+                  </div>
+                </div>
+                <div class="graph-canvas-wrap">
+                  <canvas id="graphCanvas" width="1400" height="820"></canvas>
+                </div>
+                <div id="graphMeta" class="hint graph-meta">Ready to plot.</div>
+                <div class="graph-analysis-grid">
+                  <div class="analysis-card">
+                    <h3>Functions</h3>
+                    <div id="graphFunctionsList" class="analysis-list empty">No functions plotted.</div>
+                  </div>
+                  <div class="analysis-card">
+                    <h3>Intercepts</h3>
+                    <div id="graphInterceptsList" class="analysis-list empty">Nothing yet.</div>
+                  </div>
+                  <div class="analysis-card">
+                    <h3>Stationary points</h3>
+                    <div id="graphStationaryList" class="analysis-list empty">Nothing yet.</div>
+                  </div>
+                  <div class="analysis-card">
+                    <h3>Intersections</h3>
+                    <div id="graphIntersectionsList" class="analysis-list empty">Nothing yet.</div>
+                  </div>
+                </div>
+              </section>
+            </section>
+
+            <section class="view-panel" data-view-panel="model">
+              <section class="card model-card-panel">
+                <div class="section-head">
+                  <h2>Model control</h2>
+                  <span class="hint">Swap brains, because apparently one is never enough.</span>
+                </div>
+                <div class="model-select-wrap">
+                  <label for="modelSelect">Active model</label>
+                  <select id="modelSelect"></select>
+                  <div id="modelMeta" class="hint"></div>
+                </div>
+                <div id="modelCards" class="model-grid"></div>
+              </section>
+            </section>
+          </main>
+
+          <footer class="footer-toolbar">
+            <div id="tokenCounter" class="footer-pill">⚡ 0 tokens</div>
+            <button id="upgradeBtn" class="footer-link" type="button">⬆ Upgrade</button>
+            <button id="openFilesFooterBtn" class="footer-icon" type="button">🗂️</button>
+            <button id="openCitationsFooterBtn" class="footer-icon" type="button">💼</button>
+            <button id="settingsBtn" class="footer-icon" type="button">⚙️</button>
+            <button id="helpBtn" class="footer-icon" type="button">ⓘ</button>
+            <button id="favoriteBtn" class="footer-icon" type="button">☆</button>
+          </footer>
+        </section>
+
+        <aside class="right-rail card glass-panel">
+          <button type="button" class="rail-btn tab-btn active" data-view="chat">
+            <span class="rail-icon">💬</span>
+            <span class="rail-label">Chat</span>
+          </button>
+          <button type="button" class="rail-btn tab-btn" data-view="graph">
+            <span class="rail-icon">📈</span>
+            <span class="rail-label">Graphing</span>
+          </button>
+          <button type="button" class="rail-btn tab-btn" data-view="model">
+            <span class="rail-icon">⚛️</span>
+            <span class="rail-label">Model</span>
+          </button>
+          <div class="rail-spacer"></div>
+          <div class="rail-avatar">M</div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

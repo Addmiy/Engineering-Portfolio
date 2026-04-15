@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seamless AI Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Seamless AI Settings</h1>
+      <p class="lead">Same look, same workflow, but this version runs on Chrome's built-in local AI instead of a remote Gemini API key. A rare moment of privacy winning something.</p>
+
+      <section class="card">
+        <h2>Chrome built-in AI</h2>
+        <div id="aiStatus" class="ai-status">Checking local AI status...</div>
+        <small class="hint">Use Chrome 138 or newer. If the model is downloadable or downloading, Chrome still needs to fetch the local model before the assistant can answer.</small>
+      </section>
+
+      <section class="card">
+        <h2>Assistant behaviour</h2>
+        <label for="personalityPreset">Personality preset</label>
+        <select id="personalityPreset">
+          <option value="formal-academic">Formal academic assistant</option>
+          <option value="concise-analyst">Concise research analyst</option>
+          <option value="friendly-tutor">Friendly tutor</option>
+          <option value="professional-editor">Professional editor</option>
+        </select>
+
+        <label for="customPersonality">Custom personality instructions</label>
+        <textarea id="customPersonality" rows="5" placeholder="Example: Be direct, brief, and use bullet points for summaries."></textarea>
+
+        <label for="citationStyle">Default citation style</label>
+        <select id="citationStyle">
+          <option value="APA">APA</option>
+          <option value="MLA">MLA</option>
+          <option value="Harvard">Harvard</option>
+          <option value="Chicago">Chicago</option>
+          <option value="IEEE">IEEE</option>
+        </select>
+      </section>
+
+      <section class="card">
+        <h2>Local model tuning</h2>
+        <label for="modelTemperature">Temperature (optional)</label>
+        <input id="modelTemperature" type="number" min="0" max="2" step="0.1" placeholder="Leave blank for Chrome default" />
+        <small class="hint">Chrome's Prompt API for extensions supports temperature and topK when both are set together.</small>
+
+        <label for="modelTopK">Top K (optional)</label>
+        <input id="modelTopK" type="number" min="1" max="128" step="1" placeholder="Leave blank for Chrome default" />
+      </section>
+
+      <section class="card">
+        <h2>Feature flags</h2>
+        <label class="checkbox"><input id="docsAssistEnabled" type="checkbox" /> Enable Google Docs assist overlay</label>
+        <label class="checkbox"><input id="floatingMenuEnabled" type="checkbox" /> Enable floating selection menu</label>
+      </section>
+
+      <div class="actions">
+        <button id="saveBtn">Save settings</button>
+        <span id="status"></span>
+      </div>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

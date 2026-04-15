@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  background: #09111e;
+  color: #eaf2ff;
+  font: 14px Inter, Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 30px 18px 60px;
+}
+
+.lead {
+  color: #9fb3d2;
+}
+
+.card {
+  margin-top: 16px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #20304d;
+  background: #0f192b;
+}
+
+label {
+  display: block;
+  margin: 14px 0 8px;
+  color: #9fb3d2;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #294166;
+  background: #091426;
+  color: #f5f8ff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  border: 0;
+  background: #7ac6ff;
+  color: #03131f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hint {
+  display: block;
+  color: #90a8ca;
+  margin-top: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: start;
+}
+
+.personality-row {
+  grid-template-columns: 220px 1fr auto;
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.checkbox input {
+  width: auto;
+}
+
+.list {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.list-item {
+  border: 1px solid #294166;
+  background: #091426;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+#status {
+  color: #b8f2c1;
+}

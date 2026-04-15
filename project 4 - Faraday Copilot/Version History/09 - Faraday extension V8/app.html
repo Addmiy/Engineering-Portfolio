@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faraday Copilot Fullscreen</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body class="full-app">
+    <div class="app shell" id="appRoot">
+      <header class="topbar card shell-header">
+        <div>
+          <h1>Faraday Copilot</h1>
+          <p>Fullscreen workspace rebuilt to behave like a proper app instead of collapsing under its own dramatic ambitions.</p>
+        </div>
+        <div class="inline-actions">
+          <button id="openFullscreenBtn" class="ghost hidden">Open full tab</button>
+          <button id="clearChatBtn" class="ghost">Clear chat</button>
+        </div>
+      </header>
+
+      <section class="card controls-grid sticky-controls">
+        <div>
+          <label for="modelSelect">Model</label>
+          <select id="modelSelect"></select>
+          <div id="modelMeta" class="hint"></div>
+        </div>
+        <div>
+          <label for="personalitySelect">Personality</label>
+          <select id="personalitySelect"></select>
+          <div class="hint">Uses the source tab context when available.</div>
+        </div>
+      </section>
+
+      <nav class="card section-tabs" id="sectionTabs">
+        <button type="button" class="tab-btn active" data-view="chat">Chat</button>
+        <button type="button" class="tab-btn" data-view="graph">Graph</button>
+        <button type="button" class="tab-btn" data-view="page">Page</button>
+        <button type="button" class="tab-btn" data-view="files">Files</button>
+        <button type="button" class="tab-btn" data-view="citations">Citations</button>
+      </nav>
+
+      <main class="view-stack">
+        <section class="view-panel active" data-view-panel="chat">
+          <section class="card composer composer-top">
+            <textarea id="chatInput" rows="5" placeholder="Ask about the page, selection, your files, writing, maths, code, or type /graph x^2 - 4x + 3"></textarea>
+            <div class="composer-actions">
+              <span class="hint">Enter sends. Shift + Enter adds a line break.</span>
+              <button id="sendPromptBtn" type="button">Send</button>
+            </div>
+          </section>
+          <section id="chatLog" class="card chat-log"></section>
+        </section>
+
+        <section class="view-panel" data-view-panel="graph">
+          <section id="graphCard" class="card graph-card full-graph-mode">
+            <div class="section-head">
+              <h2>Graph studio</h2>
+              <div class="inline-actions">
+                <button id="resetGraphBtn" class="ghost">Reset view</button>
+                <button id="expandGraphBtn" class="ghost">Already fullscreen</button>
+              </div>
+            </div>
+            <div class="hint graph-help">Multiple functions supported. Fullscreen mode keeps zoom and pan enabled because apparently power users enjoy control.</div>
+            <div class="graph-controls graph-controls-wrap">
+              <textarea id="graphExpression" rows="3" placeholder="y = x^2 - 4x + 3&#10;y = 2x - 1"></textarea>
+              <div class="graph-button-column">
+                <button id="plotGraphBtn">Plot</button>
+                <button id="closeGraphBtn" class="ghost">Clear</button>
+              </div>
+            </div>
+            <div class="graph-canvas-wrap fullscreen-canvas-wrap">
+              <canvas id="graphCanvas" width="1400" height="820"></canvas>
+            </div>
+            <div id="graphMeta" class="hint graph-meta">Ready to plot.</div>
+            <div class="graph-analysis-grid">
+              <div class="analysis-card">
+                <h3>Functions</h3>
+                <div id="graphFunctionsList" class="analysis-list empty">No functions plotted.</div>
+              </div>
+              <div class="analysis-card">
+                <h3>Intercepts</h3>
+                <div id="graphInterceptsList" class="analysis-list empty">Nothing yet.</div>
+              </div>
+              <div class="analysis-card">
+                <h3>Stationary points</h3>
+                <div id="graphStationaryList" class="analysis-list empty">Nothing yet.</div>
+              </div>
+              <div class="analysis-card">
+                <h3>Intersections</h3>
+                <div id="graphIntersectionsList" class="analysis-list empty">Nothing yet.</div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="view-panel" data-view-panel="page">
+          <section class="card page-card">
+            <div class="section-head">
+              <h2>Current page</h2>
+              <div class="inline-actions">
+                <button id="refreshContextBtn">Refresh context</button>
+                <button id="clearContextBtn" class="ghost">Clear context</button>
+              </div>
+            </div>
+            <div id="pageContextMeta" class="meta-box">No page context loaded yet.</div>
+            <div class="quick-actions">
+              <button data-quick="summarise">Summarise page</button>
+              <button data-quick="keypoints">Key points</button>
+              <button data-quick="citation">Cite page</button>
+              <button data-quick="notes">Study notes</button>
+              <button data-quick="quiz">Quiz</button>
+              <button data-quick="flashcards">Flashcards</button>
+              <button data-quick="docs">Docs writing help</button>
+            </div>
+          </section>
+        </section>
+
+        <section class="view-panel" data-view-panel="files">
+          <section class="card uploader-card">
+            <div class="section-head">
+              <h2>Files</h2>
+              <label class="file-btn">
+                Add file
+                <input id="fileInput" type="file" multiple />
+              </label>
+            </div>
+            <div id="fileList" class="pill-list empty">No files added.</div>
+          </section>
+        </section>
+
+        <section class="view-panel" data-view-panel="citations">
+          <section class="card citations-card">
+            <div class="section-head">
+              <h2>Citation notes</h2>
+              <button id="copyCitationsBtn" class="ghost">Copy all</button>
+            </div>
+            <div id="citationsList" class="citations-list empty">No saved citations yet.</div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

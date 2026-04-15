@@ -1,0 +1,13 @@
+flowchart LR
+  User["User in Chrome"] --> Toolbar["Highlight toolbar and context menus"]
+  User --> Panel["Side panel UI"]
+  User --> Fullscreen["Fullscreen app UI"]
+  Toolbar --> Content["content-script.js"]
+  Content --> Background["background.js service worker"]
+  Panel --> Background
+  Fullscreen --> Background
+  Background --> Storage["chrome.storage.local"]
+  Background --> OpenRouter["OpenRouter chat completions"]
+  Content --> DocsBridge["google-docs-bridge.js"]
+  Content --> AppsScript["Apps Script companion"]
+  Background --> AppsScript

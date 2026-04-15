@@ -1,0 +1,72 @@
+#faraday-floating-menu {
+  position: absolute;
+  z-index: 2147483647;
+  display: none;
+  gap: 6px;
+  flex-wrap: wrap;
+  max-width: 420px;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(10, 16, 28, 0.97);
+  border: 1px solid rgba(116, 153, 226, 0.25);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  font-family: Inter, Arial, sans-serif;
+}
+
+#faraday-floating-menu button,
+#faraday-docs-bar button {
+  border: 1px solid rgba(116, 153, 226, 0.25);
+  background: #12203b;
+  color: #f4f8ff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#faraday-floating-menu button.primary,
+#faraday-docs-bar button.primary {
+  background: #7cc4ff;
+  color: #041320;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+#faraday-toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483647;
+  display: none;
+  max-width: 360px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(10, 16, 28, 0.97);
+  color: #eef5ff;
+  border: 1px solid rgba(116, 153, 226, 0.25);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+  font: 13px/1.4 Inter, Arial, sans-serif;
+}
+
+#faraday-docs-bar {
+  position: fixed;
+  right: 16px;
+  top: 84px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(10, 16, 28, 0.97);
+  border: 1px solid rgba(116, 153, 226, 0.25);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+  font: 12px/1.4 Inter, Arial, sans-serif;
+}
+
+#faraday-docs-bar .label {
+  color: #9bb6de;
+  font-weight: 700;
+  margin-right: 6px;
+}

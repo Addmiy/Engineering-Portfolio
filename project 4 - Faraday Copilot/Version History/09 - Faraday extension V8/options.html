@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faraday Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Faraday Settings</h1>
+      <p class="lead">Wire in OpenRouter, choose a default model, tune writing preferences, and maintain the illusion of control.</p>
+
+      <section class="card">
+        <h2>OpenRouter</h2>
+        <label for="openRouterApiKey">OpenRouter API key</label>
+        <input id="openRouterApiKey" type="password" placeholder="Paste your OpenRouter API key" />
+        <small class="hint">Required: your key is stored locally for this prototype. In production you should proxy requests through your own backend.</small>
+
+        <label for="defaultModel">Default model</label>
+        <select id="defaultModel"></select>
+
+        <label for="customModelId">Add custom model ID</label>
+        <div class="row">
+          <input id="customModelId" type="text" placeholder="e.g. anthropic/claude-sonnet-4" />
+          <input id="customModelLabel" type="text" placeholder="Friendly label" />
+          <button id="addCustomModelBtn" type="button">Add</button>
+        </div>
+        <div id="customModelsList" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Assistant behaviour</h2>
+        <label for="activePersonalityId">Default personality</label>
+        <select id="activePersonalityId"></select>
+
+        <label for="customSystemPrompt">Custom system instructions</label>
+        <textarea id="customSystemPrompt" rows="5" placeholder="Extra instructions for the assistant"></textarea>
+
+        <label for="responseLength">Response length</label>
+        <select id="responseLength">
+          <option value="concise">Concise</option>
+          <option value="balanced">Balanced</option>
+          <option value="detailed">Detailed</option>
+        </select>
+
+        <label for="citationStyle">Citation style</label>
+        <select id="citationStyle">
+          <option value="APA">APA</option>
+          <option value="MLA">MLA</option>
+          <option value="Harvard">Harvard</option>
+          <option value="Chicago">Chicago</option>
+          <option value="IEEE">IEEE</option>
+        </select>
+      </section>
+
+      <section class="card">
+        <h2>Writing preferences</h2>
+        <label for="preferredTone">Preferred writing tone</label>
+        <input id="preferredTone" type="text" placeholder="Clear and helpful" />
+
+        <label for="englishDialect">English dialect</label>
+        <input id="englishDialect" type="text" placeholder="Australian English" />
+
+        <label for="styleGuidePreferences">Style guide preferences</label>
+        <input id="styleGuidePreferences" type="text" placeholder="e.g. Avoid semicolons, use short paragraphs" />
+
+        <label for="customDictionary">Custom dictionary</label>
+        <textarea id="customDictionary" rows="4" placeholder="Terms, names, spellings, banned words, preferred capitalisation"></textarea>
+      </section>
+
+      <section class="card">
+        <h2>Feature flags</h2>
+        <label class="checkbox"><input id="docsAssistEnabled" type="checkbox" /> Enable Google Docs overlay</label>
+        <label class="checkbox"><input id="floatingMenuEnabled" type="checkbox" /> Enable floating highlight toolbar</label>
+
+        <label for="docsCompanionUrl">Google Docs companion web app URL (optional)</label>
+        <input id="docsCompanionUrl" type="url" placeholder="https://script.google.com/macros/s/.../exec" />
+        <div class="hint">Paste the base Apps Script web app URL only, ending in /exec. Do not add ?docId=. The extension now adds the document ID automatically and supports both beginner docId scripts and snapshot/documentId scripts.</div>
+      </section>
+
+      <section class="card">
+        <h2>Personalities</h2>
+        <div class="row personality-row">
+          <input id="newPersonalityLabel" type="text" placeholder="Personality name" />
+          <textarea id="newPersonalitySystem" rows="3" placeholder="System prompt for this personality"></textarea>
+          <button id="addPersonalityBtn" type="button">Add personality</button>
+        </div>
+        <div id="personalityList" class="list"></div>
+      </section>
+
+      <div class="actions">
+        <button id="saveBtn">Save settings</button>
+        <span id="status"></span>
+      </div>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
