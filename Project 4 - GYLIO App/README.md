@@ -21,6 +21,7 @@ The prototype focuses on a calm but decisive user experience. It combines a trai
 - Designed a responsive dashboard layout with custom visual styling, animated UI states, and mobile breakpoints.
 - Added PWA foundation files including a web manifest, service worker, and app icon.
 - Built a version 2 Expo React Native app with TypeScript, Expo Router, local persistence, notification scheduling, Supabase video lookup, fullscreen activation playback, and a minimal daily home screen.
+- Completed a V1 UI revision with a stricter 8-point layout rhythm, layered charcoal surfaces, premium typography, thin outline iconography, and subtle fade/slide motion.
 
 ## What I Accomplished
 
@@ -28,6 +29,7 @@ The prototype focuses on a calm but decisive user experience. It combines a trai
 - Created a disciplined visual identity aligned with the product mission.
 - Built the first version of the app without relying on a heavy framework or external build tooling.
 - Rebuilt the concept as a native-oriented mobile app with a cleaner service architecture and real Supabase-ready video pipeline.
+- Refactored the interface into a consistent product design system across alarm setup, activation, lesson, calendar, task, and journal screens.
 - Structured the code and documentation so the project can be reviewed, demonstrated, and iterated.
 
 ## Evidence
@@ -77,3 +79,5 @@ Evidence is organised by app version so future UI revisions can be reviewed alon
 - [Version 1 run guide](./version%201/README.md)
 - [Version 2 source code](./version%202/)
 - [Version 2 run guide](./version%202/README.md)
+- [V1 UI revision source code](./V1%20UI%20revision/)
+- [V1 UI revision run guide](./V1%20UI%20revision/README.md)

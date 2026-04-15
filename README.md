@@ -40,9 +40,9 @@ The project package includes a complete version history from the original local 
 
 GYLIO, short for Get Your Life In Order, is a character-development productivity prototype designed to help users begin their day with intentional action instead of distraction.
 
-The first version includes a morning activation flow, trait-based motivational sequencing, a structured execution dashboard, priority task tracking, responsive interface design, and PWA foundation files. Version 2 rebuilds the concept as an Expo React Native mobile app with alarm setup, notification-based activation, Supabase video retrieval, lesson persistence, calendar, daily tasks, and journaling.
+The first version includes a morning activation flow, trait-based motivational sequencing, a structured execution dashboard, priority task tracking, responsive interface design, and PWA foundation files. Version 2 rebuilds the concept as an Expo React Native mobile app with alarm setup, notification-based activation, Supabase video retrieval, lesson persistence, calendar, daily tasks, and journaling. The V1 UI revision adds a more premium dark interface system with stronger typography, layered cards, outline icons, and restrained motion.
 
-**Skills demonstrated:** HTML, CSS, JavaScript, React Native, Expo, TypeScript, Expo Router, Supabase integration, local persistence, notification scheduling, responsive UI design, product brief interpretation, and technical documentation.
+**Skills demonstrated:** HTML, CSS, JavaScript, React Native, Expo, TypeScript, Expo Router, Supabase integration, local persistence, notification scheduling, responsive UI design, design-system refactoring, product brief interpretation, and technical documentation.
 
 [View the GYLIO case study](./Project%204%20-%20GYLIO%20App/)
 
