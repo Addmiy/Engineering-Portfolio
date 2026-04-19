@@ -36,15 +36,25 @@ The project package includes a complete version history from the original local 
 
 [View the Faraday Copilot case study](./Project%203%20-%20Faraday%20Copilot/)
 
-### Project 4 - GYLIO App
+### Project 4 - GYLIO App (ONGOING)
 
-GYLIO, short for Get Your Life In Order, is a character-development productivity prototype designed to help users begin their day with intentional action instead of distraction.
+GYLIO, short for Get Your Life In Order, is an ongoing character-development productivity prototype designed to help users begin their day with intentional action instead of distraction.
 
 The first version includes a morning activation flow, trait-based motivational sequencing, a structured execution dashboard, priority task tracking, responsive interface design, and PWA foundation files. Version 2 rebuilds the concept as an Expo React Native mobile app with alarm setup, notification-based activation, Supabase video retrieval, lesson persistence, calendar, daily tasks, and journaling. The V1 UI revision adds a more premium dark interface system with stronger typography, layered cards, outline icons, and restrained motion.
 
 **Skills demonstrated:** HTML, CSS, JavaScript, React Native, Expo, TypeScript, Expo Router, Supabase integration, local persistence, notification scheduling, responsive UI design, design-system refactoring, product brief interpretation, and technical documentation.
 
-[View the GYLIO case study](./Project%204%20-%20GYLIO%20App/)
+[View the GYLIO case study](./Project%204%20-%20GYLIO%20App%20%28ONGOING%29/)
+
+### Project 5 - ENG1013 Assignment (ONGOING)
+
+The ENG1013 Assignment is an ongoing smart-systems team project focused on a simplified traffic-control safety system for the Blackwall Tunnel southern approach. The system must detect over-height vehicles, control traffic and pedestrian signals, provide an over-height exit path, and fail safely during tunnel-height detection power loss.
+
+The current project package includes a concise assignment overview PDF, the official specification, a redacted Milestone 1 System Design Document, screenshot evidence from the block diagram and flowcharts, a requirements summary, and Milestone 1 planning notes. Later code, circuit diagrams, prototype photos, and demonstration evidence will be added as the assignment progresses.
+
+**Skills demonstrated:** systems engineering, requirement extraction, Arduino/Python planning, Pymata4 planning, sensor/control-system decomposition, block diagramming, flowchart design, project scheduling, team communication planning, conflict-resolution planning, and portfolio evidence curation.
+
+[View the ENG1013 Assignment case study](./Project%205%20-%20ENG1013%20assignment%20%28ONGOING%29/)
 
 ## Portfolio Structure
 

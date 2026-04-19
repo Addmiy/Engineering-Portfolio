@@ -1,4 +1,6 @@
-# Project 4 - GYLIO App
+# Project 4 - GYLIO App (ONGOING)
+
+Status: Ongoing. This folder preserves the current web and mobile prototype iterations while the product concept continues to evolve.
 
 GYLIO, short for Get Your Life In Order, is a productivity app built around a behavioural design brief: help users start their day with intentional action instead of distraction.
 

@@ -1,4 +1,6 @@
-# Engineering Design Brief - GYLIO App
+# Engineering Design Brief - GYLIO App (ONGOING)
+
+Status: Ongoing. The current portfolio evidence covers the existing MVP, React Native rebuild, and UI revision, with future product and implementation work still expected.
 
 ## Project Purpose
 
