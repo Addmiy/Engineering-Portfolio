@@ -1,6 +1,6 @@
 # Engineering Portfolio
 
-This portfolio presents a focused collection of engineering and software projects built to demonstrate practical implementation skill, product thinking, technical communication, and the ability to turn a concept into a working prototype.Each project is organised as a concise case study with source code, design reasoning, technical highlights, and visual evidence of the final result.
+This portfolio presents a focused collection of engineering and software projects built to demonstrate practical implementation skill, product thinking, technical communication, and the ability to turn a concept into a working prototype. Each project is organised as a concise case study with source code, design reasoning, technical highlights, and visual evidence of the final result.
 
 ## Featured Projects
 
