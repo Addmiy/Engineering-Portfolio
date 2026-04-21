@@ -63,6 +63,3 @@ Each project folder is structured to make review straightforward:
 - An evidence folder contains screenshots or photos of the completed work.
 - Versioned source folders preserve the implementation history.
 
-## Review Focus
-
-This portfolio is designed for quick employer review. The strongest evidence to look for is how each project connects a real problem to a working technical solution, how the implementation is organised, and how clearly the engineering decisions are explained.
