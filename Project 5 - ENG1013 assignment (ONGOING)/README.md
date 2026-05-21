@@ -6,6 +6,16 @@ ENG1013 is a smart-systems engineering assignment focused on designing, building
 
 This portfolio folder captures the assignment requirements, Team F16's Milestone 1 System Design Document evidence, implementation source snapshots, circuit documentation, and media evidence from the build. The public portfolio copy redacts student IDs, staff email details, and individual team member names from preserved documents, code comments, and circuit title blocks.
 
+## Assignment Overview
+
+![Assignment system overview](./Evidence/Screenshots/assignment-system-overview.png)
+
+The assignment modelled the Blackwall Tunnel southern approach in the UK, where over-height vehicles must be detected and redirected before reaching a tunnel entrance with a 4.0 m clearance limit. The task was to build a simplified smart traffic-control demonstrator that could sense vehicle height, warn drivers, control road and pedestrian signals, provide an over-height exit route, and respond safely if part of the detection system lost power.
+
+Our build represented the road layout using an Arduino-based prototype with ultrasonic sensors, traffic lights, pedestrian buttons and lights, warning lights, buzzers, daylight sensing, and backup failure-alert circuitry. The system was split into five subsystems: approach height detection, Tunnel Ave control, over-height exit control, tunnel entrance height detection, and hardware failure alert. Subsystems 1 and 2 were responsible for measuring actual vehicle height at the approach, while Subsystems 3 and 4 focused on detecting over-height vehicles passing key points and changing the traffic-light states accordingly.
+
+The final objective was not just to write isolated code, but to integrate the sensors, circuits, Python control logic, and physical breadboard wiring into a working traffic safety model that demonstrated the required behaviours.
+
 ## Current Stage
 
 The project has progressed from Milestone 1 planning into build and integration. The available evidence now shows requirement extraction, system decomposition, hardware interaction planning, integrated Python control logic, subsystem wiring notes, exported circuit diagrams, physical prototype construction, and recorded system demonstrations.
