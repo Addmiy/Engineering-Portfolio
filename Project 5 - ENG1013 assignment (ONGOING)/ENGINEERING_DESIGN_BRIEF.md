@@ -35,13 +35,13 @@ Design and implement an Arduino-linked traffic-control prototype that detects ov
 
 ## Current Outcome
 
-Milestone 1 has produced the planning package: system interaction block diagram, high-level flowcharts, feature selections, proposed schedule, communication plan, conflict resolution plan, and meeting-minutes template. The project remains ongoing because the physical implementation, integrated codebase, circuit diagrams, demonstration evidence, and viva/reflection evidence are still future milestones.
+Milestone 1 produced the planning package: system interaction block diagram, high-level flowcharts, feature selections, proposed schedule, communication plan, conflict resolution plan, and meeting-minutes template. The latest implementation evidence adds Python source snapshots, wiring notes, exported circuit diagrams, prototype photos, and demonstration videos from the working traffic-control system. The project remains ongoing because final viva/reflection evidence is still future work.
 
 ## Planned Build Direction
 
-- Implement required features for all five subsystems.
-- Implement selected general and integration features where time and hardware constraints allow.
-- Build toward a single Arduino and single Python entry point for full integration marks.
+- Preserve the final integrated build evidence against the official feature IDs.
+- Keep circuit diagrams, wiring notes, code, photos, and video evidence aligned for later viva discussion.
+- Continue refining toward the cleanest single-launch system where hardware and time constraints allow.
 - Keep feature IDs traceable from the specification to code, circuit diagrams, and demonstration evidence.
 - Preserve build evidence in this portfolio as each milestone is completed.
 
@@ -50,10 +50,16 @@ Milestone 1 has produced the planning package: system interaction block diagram,
 - Requirement extraction
 - Systems engineering decomposition
 - Arduino and Python planning
+- Arduino and Python implementation
 - Pymata4-based hardware control planning
+- Pymata4-based hardware control implementation
+- Ultrasonic sensing and traffic-light sequencing
+- LDR-based day/night detection
 - Flowchart design
 - Block diagram communication
-- Circuit documentation planning
+- Circuit documentation
+- Physical prototype integration
+- Demonstration evidence capture
 - Project scheduling
 - Team communication planning
 - Conflict resolution planning

@@ -48,9 +48,9 @@ The first version includes a morning activation flow, trait-based motivational s
 
 The ENG1013 Assignment is an ongoing smart-systems team project focused on a simplified traffic-control safety system for the Blackwall Tunnel southern approach. The system must detect over-height vehicles, control traffic and pedestrian signals, provide an over-height exit path, and fail safely during tunnel-height detection power loss.
 
-The current project package includes a concise assignment overview PDF, the official specification, a redacted Milestone 1 System Design Document, screenshot evidence from the block diagram and flowcharts, a requirements summary, and Milestone 1 planning notes. Later code, circuit diagrams, prototype photos, and demonstration evidence will be added as the assignment progresses.
+The current project package includes the official specification, redacted Milestone 1 planning evidence, Python source snapshots, wiring notes, exported circuit diagrams, prototype photos, and demonstration videos from the working Arduino traffic-control system.
 
-**Skills demonstrated:** systems engineering, requirement extraction, Arduino/Python planning, Pymata4 planning, sensor/control-system decomposition, block diagramming, flowchart design, project scheduling, team communication planning, conflict-resolution planning, and portfolio evidence curation.
+**Skills demonstrated:** systems engineering, requirement extraction, Arduino/Python development, Pymata4 hardware control, ultrasonic sensing, traffic-light sequencing, pedestrian-warning logic, LDR day/night detection, circuit documentation, physical breadboard integration, oscilloscope/function-generator testing, team communication planning, and portfolio evidence curation.
 
 [View the ENG1013 Assignment case study](./Project%205%20-%20ENG1013%20assignment%20%28ONGOING%29/)
 
@@ -62,4 +62,3 @@ Each project folder is structured to make review straightforward:
 - A design brief documents the engineering objective, constraints, and decisions.
 - An evidence folder contains screenshots or photos of the completed work.
 - Versioned source folders preserve the implementation history.
-

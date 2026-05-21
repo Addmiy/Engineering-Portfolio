@@ -1,14 +1,14 @@
 # Project 5 - ENG1013 Assignment (ONGOING)
 
-Status: Ongoing. Milestone 1 planning evidence has been completed and preserved; later build, integration, demonstration, and viva evidence will be added as the assignment progresses.
+Status: Ongoing. Milestone 1 planning evidence has been preserved, and the latest portfolio update adds implementation code, circuit diagrams, prototype photos, and demonstration videos from the working traffic-control system. Final viva/reflection evidence will still be added after the assignment is complete.
 
 ENG1013 is a smart-systems engineering assignment focused on designing, building, and demonstrating a simplified traffic-control safety system for the Blackwall Tunnel southern approach. The system is intended to reduce over-height vehicle collision risk by detecting vehicle height, warning drivers, managing traffic and pedestrian lights, providing an over-height exit path, and failing safely if the tunnel-height detection subsystem loses power.
 
-This portfolio folder captures the assignment requirements, a concise project overview PDF, and Team F16's Milestone 1 System Design Document evidence. The public portfolio copy redacts student IDs, staff email details, and individual team member names from the preserved Milestone 1 source document and timeline screenshot.
+This portfolio folder captures the assignment requirements, Team F16's Milestone 1 System Design Document evidence, implementation source snapshots, circuit documentation, and media evidence from the build. The public portfolio copy redacts student IDs, staff email details, and individual team member names from preserved documents, code comments, and circuit title blocks.
 
 ## Current Stage
 
-The project is currently in the transition from Milestone 1 planning into later implementation. The available evidence shows requirement extraction, system decomposition, hardware interaction planning, high-level subsystem logic, project scheduling, communication planning, and conflict-resolution planning.
+The project has progressed from Milestone 1 planning into build and integration. The available evidence now shows requirement extraction, system decomposition, hardware interaction planning, integrated Python control logic, subsystem wiring notes, exported circuit diagrams, physical prototype construction, and recorded system demonstrations.
 
 ## Problem
 
@@ -43,7 +43,12 @@ Milestone 1 produced a System Design Document containing:
 - Converted official and team PDF pages into screenshot evidence.
 - Mapped the assignment into five subsystem responsibilities and milestone deliverables.
 - Documented feature IDs selected during Milestone 1 for later traceability into code and circuit evidence.
-- Redacted public portfolio copies to avoid publishing student IDs, staff email details, and team member names.
+- Preserved Python source snapshots for the final integrated system and earlier integration stages.
+- Added wiring notes for integrated subsystem builds and Subsystem 3.
+- Exported 24 circuit-diagram pages from the latest circuit PDF into reviewable PNG evidence.
+- Added physical prototype photos covering lab integration, oscilloscope testing, full breadboard wiring, and LDR/LED close-up evidence.
+- Added five demonstration videos from the working system.
+- Redacted public portfolio copies to avoid publishing student IDs, staff email details, and individual team member names.
 
 ## Key Evidence
 
@@ -51,22 +56,26 @@ Milestone 1 produced a System Design Document containing:
 
 ![Subsystem 1 flowchart](./Evidence/Screenshots/milestone-1-subsystem-1-flowchart.png)
 
-![Proposed timeline](./Evidence/Screenshots/milestone-1-proposed-timeline.png)
+![Prototype breadboard build](./Evidence/Photos/photo-03-full-breadboard-prototype.jpg)
+
+![Circuit diagram example](./Circuit%20Diagrams/Exported%20PNG/circuit-diagram-08-sheet-8-subsystem-3.png)
 
 ## Project Files
 
 - [Project overview PDF](./Project%20Overview.pdf)
 - [Requirements summary](./Documentation/Requirements%20Summary.md)
 - [Milestone 1 summary](./Documentation/Milestone%201%20Summary.md)
+- [Build and integration summary](./Documentation/Build%20and%20Integration%20Summary.md)
 - [Engineering design brief](./ENGINEERING_DESIGN_BRIEF.md)
+- [Code index](./Code/README.md)
+- [Circuit diagram index](./Circuit%20Diagrams/README.md)
 - [Evidence index](./Evidence/README.md)
+- [Prototype photo index](./Evidence/Photos/README.md)
+- [Demonstration video index](./Evidence/Videos/README.md)
 - [Original assignment specification](./Original%20Documents/ENG1013%20Traffic%20System%20Project%20Specification.pdf)
 - [Redacted Milestone 1 System Design Document](./Original%20Documents/TeamF16%20Milestone%201%20System%20Design%20Document%20-%20Redacted.pdf)
 
 ## Next Portfolio Updates
 
-- Add circuit diagrams for each implemented function.
-- Add Python source snapshots for the final integrated system.
-- Add photos or screenshots from the physical prototype and Week 11 demonstration.
 - Add viva/reflection notes after Milestone 3 is complete.
 - Update this folder from ongoing to complete once final marking evidence and reflection artifacts are available.
