@@ -1,78 +1,74 @@
 # Project 4 - GYLIO App (ONGOING)
 
-Status: Ongoing. This folder preserves the current web and mobile prototype iterations while the product concept continues to evolve.
+GYLIO, short for Get Your Life In Order, is a behavioural productivity prototype that helps users start the day with intentional action instead of distraction.
 
-GYLIO, short for Get Your Life In Order, is a productivity app built around a behavioural design brief: help users start their day with intentional action instead of distraction.
+## Review Summary
 
-I translated a high-level product concept into a working web app with two core MVP systems: a Morning Activation flow and a Structured Execution Dashboard. The app lets users select a character trait, preview motivational training segments, launch a full-screen activation reel, track an alarm countdown, view daily schedule blocks, and manage priority tasks.
+| Field | Evidence |
+| --- | --- |
+| **Status** | Ongoing product prototype |
+| **Built** | Static web MVP, Expo React Native rebuild, and V1 UI revision |
+| **Stack** | HTML, CSS, JavaScript, PWA basics, React Native, Expo, Expo Router, TypeScript, Supabase client, AsyncStorage, notifications, Expo Video |
+| **Best evidence** | UI screenshots, versioned source folders, design brief, package files, service layer, alarm and activation screens |
+| **Main technical value** | Product brief interpretation, frontend implementation, mobile app structure, service abstraction, local persistence, and UI iteration |
 
-This project demonstrates my ability to interpret a product brief, design a clean user experience, implement interactive frontend behaviour, structure a production-ready mobile codebase, and organise a prototype so it can be reviewed by employers or extended in future versions.
+## Product Problem
 
-## Problem
-
-Most productivity tools organise tasks after the user has already entered the day reactively. GYLIO explores a more targeted intervention: shaping the first interaction after waking so users begin with identity, direction, and a clear next action.
+Most productivity tools organise tasks after the user has already entered the day reactively. GYLIO targets the first interaction after waking: identity, motivation, and the next concrete action.
 
 ## Solution
 
-The prototype focuses on a calm but decisive user experience. It combines a trait-based morning activation sequence with a lightweight dashboard for schedule awareness, priority task tracking, and execution feedback.
+The prototype combines a morning activation sequence with a lightweight execution dashboard. Users can select a trait, preview motivational training segments, launch a full-screen activation flow, track an alarm countdown, view daily schedule blocks, manage priority tasks, and journal progress.
 
-## Technical Highlights
+![Version 2 home lesson dashboard](./evidence/version%202/02-home-lesson-dashboard.png)
 
-- Built a no-install HTML, CSS, and JavaScript prototype with modular data-driven UI behaviour.
-- Implemented trait selection, rotating activation sequences, alarm countdown logic, task completion scoring, and schedule rendering.
-- Designed a responsive dashboard layout with custom visual styling, animated UI states, and mobile breakpoints.
-- Added PWA foundation files including a web manifest, service worker, and app icon.
-- Built a version 2 Expo React Native app with TypeScript, Expo Router, local persistence, notification scheduling, Supabase video lookup, fullscreen activation playback, and a minimal daily home screen.
-- Completed a V1 UI revision with a stricter 8-point layout rhythm, layered charcoal surfaces, premium typography, thin outline iconography, and subtle fade/slide motion.
+![GYLIO user journey](./Diagrams/gylio-user-journey.svg)
 
-## What I Accomplished
+## Technical Proof Points
 
-- Converted an abstract behavioural-product brief into a functional MVP prototype.
-- Created a disciplined visual identity aligned with the product mission.
-- Built the first version of the app without relying on a heavy framework or external build tooling.
-- Rebuilt the concept as a native-oriented mobile app with a cleaner service architecture and real Supabase-ready video pipeline.
-- Refactored the interface into a consistent product design system across alarm setup, activation, lesson, calendar, task, and journal screens.
-- Structured the code and documentation so the project can be reviewed, demonstrated, and iterated.
+- Built a no-install HTML/CSS/JavaScript MVP with data-driven UI rendering.
+- Implemented trait selection, activation sequencing, alarm countdown logic, task completion scoring, and schedule rendering.
+- Added PWA foundation files: web manifest, service worker, and app icon.
+- Rebuilt the concept in Expo React Native with TypeScript and Expo Router.
+- Added local persistence, notification scheduling, Supabase video lookup, fullscreen activation playback, calendar planning, daily tasks, and journaling.
+- Refactored the UI toward a more consistent design system across alarm setup, activation, lesson dashboard, calendar, tasks, and journal screens.
+
+![Frontend and service architecture](./Diagrams/frontend-service-architecture.svg)
+
+## What to Inspect First
+
+- [Engineering design brief](./ENGINEERING_DESIGN_BRIEF.md) - product purpose, objective, MVP systems, constraints, and skills.
+- [Version 1 source](./version%201/) - static web MVP.
+- [Version 1 run guide](./version%201/README.md) - no-build browser prototype.
+- [Version 2 source](./version%202/) - Expo React Native rebuild.
+- [Version 2 package file](./version%202/package.json) - dependencies and scripts.
+- [V1 UI revision source](./V1%20UI%20revision/) - refined mobile UI direction.
 
 ## Evidence
 
-Evidence is organised by app version so future UI revisions can be reviewed alongside the matching source-code snapshot.
-
-### Version 1
-
-#### Desktop dashboard
+### Version 1 Web MVP
 
 ![Desktop dashboard](./evidence/version%201/01-dashboard-desktop.png)
 
-#### Morning activation reel
-
 ![Morning activation reel](./evidence/version%201/02-morning-activation-modal.png)
-
-#### Trait-based training selection
 
 ![Trait selection](./evidence/version%201/03-trait-selection.png)
 
-#### Responsive mobile layout
+![Responsive mobile layout](./evidence/version%201/04-mobile-responsive-layout.png)
 
-![Mobile layout](./evidence/version%201/04-mobile-responsive-layout.png)
-
-### Version 2
-
-#### Alarm setup
+### Version 2 Expo Prototype
 
 ![Alarm setup](./evidence/version%202/01-alarm-setup.png)
 
-#### Lesson dashboard
-
-![Lesson dashboard](./evidence/version%202/02-home-lesson-dashboard.png)
-
-#### Morning activation video
-
 ![Morning activation video](./evidence/version%202/03-activation-video-state.png)
 
-#### Daily planning and journal
-
 ![Daily planning and journal](./evidence/version%202/04-daily-planning-journal.png)
+
+## Limitations and Next Work
+
+- The project is ongoing and has not been packaged as a production mobile release.
+- Version 1 represents alarm-trigger behaviour as a prototype interaction; true wake-screen automation requires native platform handling.
+- Version 2 is Supabase-ready but still needs production auth, content management, analytics, testing, and deployment decisions.
 
 ## Project Files
 

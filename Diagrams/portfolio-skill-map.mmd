@@ -1,0 +1,36 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#eef2ff", "tertiaryColor": "#ecfdf5", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart TB
+  classDef title fill:#0f172a,stroke:#0f172a,stroke-width:1.5px,color:#ffffff;
+  classDef project fill:#f8fafc,stroke:#334155,stroke-width:1.4px,color:#0f172a;
+  classDef software fill:#eef2ff,stroke:#4f46e5,stroke-width:1.2px,color:#1e1b4b;
+  classDef hardware fill:#ecfdf5,stroke:#047857,stroke-width:1.2px,color:#064e3b;
+  classDef mechanical fill:#fff7ed,stroke:#c2410c,stroke-width:1.2px,color:#431407;
+
+  Portfolio["Engineering Portfolio<br/>evidence-first technical review map"]
+  FastReview["Reviewer path:<br/>choose a project, inspect the linked evidence, verify the claim"]
+
+  subgraph MechanicalSystems["Mechanical and systems engineering evidence"]
+    Gearbox["Gearbox Model<br/>Built: classroom model gearbox<br/>Skills: CAD, fabrication, gear-ratio planning, diagnostic testing<br/>Evidence: full report, CAD renders, block diagram, flowchart"]
+    Refraction["Light Refraction System<br/>Built: light-path systems package<br/>Skills: system decomposition, CAD iteration, technical communication<br/>Evidence: report, Draw.io source, CAD files, flowchart"]
+  end
+
+  subgraph SoftwareProducts["Software and product prototype evidence"]
+    Faraday["Faraday Copilot<br/>Built: Manifest V3 Chrome AI extension<br/>Skills: browser messaging, OpenRouter API, Apps Script, graph engine<br/>Evidence: versioned source, architecture docs, screenshots"]
+    GYLIO["GYLIO App<br/>Built: web MVP and Expo React Native rebuild<br/>Skills: TypeScript, Expo Router, Supabase services, notifications, UI iteration<br/>Evidence: source folders, package files, screenshots"]
+  end
+
+  subgraph HardwareControl["Hardware and control-system evidence"]
+    ENG1013["ENG1013 Assignment<br/>Built: Arduino/Python traffic safety demonstrator<br/>Skills: Pymata4 control, ultrasonic sensing, LDR logic, circuit documentation<br/>Evidence: code, wiring notes, circuit PNGs, photos, videos"]
+  end
+
+  Portfolio --> FastReview
+  FastReview --> Gearbox
+  FastReview --> Refraction
+  FastReview --> Faraday
+  FastReview --> GYLIO
+  FastReview --> ENG1013
+
+  class Portfolio,FastReview title;
+  class Gearbox,Refraction project;
+  class Faraday,GYLIO software;
+  class ENG1013 hardware;

@@ -1,64 +1,58 @@
 # Project 5 - ENG1013 Assignment (ONGOING)
 
-Status: Ongoing. Milestone 1 planning evidence has been preserved, and the latest portfolio update adds implementation code, circuit diagrams, prototype photos, and demonstration videos from the working traffic-control system. Final viva/reflection evidence will still be added after the assignment is complete.
+An Arduino-linked smart traffic-control assignment that models over-height vehicle detection and diversion for the Blackwall Tunnel southern approach. The portfolio evidence covers requirement extraction, system decomposition, Python control code, wiring notes, circuit diagrams, prototype photos, and working-system videos.
 
-ENG1013 is a smart-systems engineering assignment focused on designing, building, and demonstrating a simplified traffic-control safety system for the Blackwall Tunnel southern approach. The system is intended to reduce over-height vehicle collision risk by detecting vehicle height, warning drivers, managing traffic and pedestrian lights, providing an over-height exit path, and failing safely if the tunnel-height detection subsystem loses power.
+## Review Summary
 
-This portfolio folder captures the assignment requirements, Team F16's Milestone 1 System Design Document evidence, implementation source snapshots, circuit documentation, and media evidence from the build. The public portfolio copy redacts student IDs, staff email details, and individual team member names from preserved documents, code comments, and circuit title blocks.
+| Field | Evidence |
+| --- | --- |
+| **Status** | Ongoing. Build/integration evidence is present; final viva/reflection evidence is still future work. |
+| **Built** | Simplified traffic safety demonstrator with height sensing, warning outputs, traffic lights, pedestrian signals, over-height exit logic, and failure-alert planning |
+| **Stack and hardware** | Python 3.10.x, Pymata4, Arduino, ultrasonic sensors, LDRs, push buttons, LEDs, buzzers, shift registers, breadboard wiring, oscilloscope/function-generator testing |
+| **Best evidence** | Requirements summary, Milestone 1 planning screenshots, integrated Python source, wiring guides, exported circuit diagrams, photos, and MP4 demonstrations |
+| **Main technical value** | Requirements traceability, hardware/software integration, sensor-driven control logic, circuit documentation, and public evidence curation |
 
-## Assignment Overview
+## Assignment Context
+
+The system models a tunnel approach where over-height vehicles must be detected and redirected before reaching a 4.0 m clearance limit. The simplified demonstrator uses sensors, lights, buttons, buzzers, day/night detection, and failure-alert circuitry to show the required safety behaviours.
 
 ![Assignment system overview](./Evidence/Screenshots/assignment-system-overview.png)
 
-The assignment modelled the Blackwall Tunnel southern approach in the UK, where over-height vehicles must be detected and redirected before reaching a tunnel entrance with a 4.0 m clearance limit. The task was to build a simplified smart traffic-control demonstrator that could sense vehicle height, warn drivers, control road and pedestrian signals, provide an over-height exit route, and respond safely if part of the detection system lost power.
+![Hardware and software interaction](./Diagrams/hardware-software-interaction.svg)
 
-Our build represented the road layout using an Arduino-based prototype with ultrasonic sensors, traffic lights, pedestrian buttons and lights, warning lights, buzzers, daylight sensing, and backup failure-alert circuitry. The system was split into five subsystems: approach height detection, Tunnel Ave control, over-height exit control, tunnel entrance height detection, and hardware failure alert. Subsystems 1 and 2 were responsible for measuring actual vehicle height at the approach, while Subsystems 3 and 4 focused on detecting over-height vehicles passing key points and changing the traffic-light states accordingly.
+## System Scope
 
-The final objective was not just to write isolated code, but to integrate the sensors, circuits, Python control logic, and physical breadboard wiring into a working traffic safety model that demonstrated the required behaviours.
+The assignment is divided into five subsystems:
 
-## Current Stage
+| Subsystem | Responsibility |
+| --- | --- |
+| **1. Approach Height Detection** | Detect over-height vehicles before the exit and trigger warnings. |
+| **2. Tunnel Ave Control** | Manage Tunnel Ave traffic lights and pedestrian crossing behaviour. |
+| **3. Over-height Exit** | Allow detected over-height vehicles to leave the route before the tunnel. |
+| **4. Tunnel Height Detection** | Provide a final detection and closure point at the tunnel entrance. |
+| **5. Failure Alert** | Provide a hardware-only alert and override path during detection power failure. |
 
-The project has progressed from Milestone 1 planning into build and integration. The available evidence now shows requirement extraction, system decomposition, hardware interaction planning, integrated Python control logic, subsystem wiring notes, exported circuit diagrams, physical prototype construction, and recorded system demonstrations.
+## Technical Proof Points
 
-## Problem
-
-Over-height vehicles present a safety risk when approaching tunnel entrances with fixed clearance limits. This assignment models that safety problem through a simplified traffic-control system that must identify over-height vehicles, prevent unsafe tunnel entry, manage nearby traffic flows, and provide a hardware-only failure response.
-
-## Solution Direction
-
-The planned system is divided into five subsystems:
-
-- Approach Height Detection Subsystem: detects over-height vehicles before the exit and controls warning signals.
-- Tunnel Ave Control Subsystem: manages Tunnel Ave traffic lights and pedestrian crossings.
-- Over-height Exit Subsystem: allows detected over-height vehicles to leave the route before the tunnel.
-- Tunnel Height Detection Subsystem: provides a final detection and closure point at the tunnel entrance.
-- Failure Alert Subsystem: provides a hardware-only alert and override path during power failure.
-
-## Milestone 1 Evidence
-
-Milestone 1 produced a System Design Document containing:
-
-- A system interaction block diagram showing Arduino, laptop, sensors, lights, buttons, buzzers, battery, and hardware override circuits.
-- High-level flowcharts for Subsystems 1 to 4.
-- A feature-selection page for the hardware-only Failure Alert Subsystem.
-- A proposed timeline covering programming, wiring, circuit diagrams, and demonstrator check-in work.
-- A communications plan using primary, secondary, and backup communication channels.
-- A conflict resolution plan covering disagreements, low-quality work, incomplete work, late work, and lack of participation.
-- A meeting-minutes template for later project-management evidence.
-
-## Technical Highlights
-
-- Extracted and condensed a 30-page assignment specification into a seven-page overview PDF.
-- Preserved original assignment requirements alongside portfolio-friendly summaries.
-- Converted official and team PDF pages into screenshot evidence.
-- Mapped the assignment into five subsystem responsibilities and milestone deliverables.
-- Documented feature IDs selected during Milestone 1 for later traceability into code and circuit evidence.
-- Preserved Python source snapshots for the final integrated system and earlier integration stages.
+- Condensed the official assignment specification into a reviewer-friendly requirements overview.
+- Preserved Milestone 1 planning evidence: system interaction block diagram, subsystem flowcharts, feature selection, schedule, communication plan, and conflict resolution plan.
+- Preserved Python source snapshots for final integration and earlier staged subsystem builds.
 - Added wiring notes for integrated subsystem builds and Subsystem 3.
-- Exported 24 circuit-diagram pages from the latest circuit PDF into reviewable PNG evidence.
-- Added physical prototype photos covering lab integration, oscilloscope testing, full breadboard wiring, and LDR/LED close-up evidence.
-- Added five demonstration videos from the working system.
-- Redacted public portfolio copies to avoid publishing student IDs, staff email details, and individual team member names.
+- Exported 24 circuit-diagram pages from the latest redacted circuit PDF into reviewable PNG evidence.
+- Added physical prototype photos covering lab integration, oscilloscope/function-generator testing, full breadboard wiring, and LDR/LED close-up evidence.
+- Added five demonstration videos from the working Arduino traffic-control system.
+- Redacted public copies to remove student IDs, staff email details, and individual team member names where practical.
+
+![Feature traceability matrix](./Diagrams/feature-traceability-matrix.svg)
+
+## What to Inspect First
+
+- [Requirements summary](./Documentation/Requirements%20Summary.md) - mission, restrictions, milestones, and subsystem requirements.
+- [Build and integration summary](./Documentation/Build%20and%20Integration%20Summary.md) - implementation, hardware, code, and video evidence.
+- [Code index](./Code/README.md) - final integrated source and earlier snapshots.
+- [Circuit diagram index](./Circuit%20Diagrams/README.md) - redacted circuit files and exported PNG evidence.
+- [Evidence index](./Evidence/README.md) - screenshots, photos, videos, and source document notes.
+- [Engineering design brief](./ENGINEERING_DESIGN_BRIEF.md) - objective, constraints, current outcome, and skills.
 
 ## Key Evidence
 
@@ -66,7 +60,10 @@ Milestone 1 produced a System Design Document containing:
 
 ![Prototype breadboard build](./Evidence/Photos/photo-03-full-breadboard-prototype.jpg)
 
-## High-Level Flowcharts
+![Vehicle test timeline](./Diagrams/vehicle-test-timeline.svg)
+
+<details>
+<summary>High-level subsystem flowcharts</summary>
 
 ![Subsystem 1 high-level flowchart](./Evidence/Screenshots/milestone-1-subsystem-1-flowchart.png)
 
@@ -76,7 +73,10 @@ Milestone 1 produced a System Design Document containing:
 
 ![Subsystem 4 high-level flowchart](./Evidence/Screenshots/milestone-1-subsystem-4-flowchart.png)
 
-## Subsystem 2 Circuit Diagrams
+</details>
+
+<details>
+<summary>Subsystem 2 circuit diagrams</summary>
 
 ![Subsystem 2 circuit diagram sheet 5](./Circuit%20Diagrams/Exported%20PNG/circuit-diagram-05-sheet-5-subsystem-2.png)
 
@@ -84,7 +84,10 @@ Milestone 1 produced a System Design Document containing:
 
 ![Subsystem 2 circuit diagram sheet 7](./Circuit%20Diagrams/Exported%20PNG/circuit-diagram-07-sheet-7-subsystem-2.png)
 
-## Subsystem 3 Circuit Diagrams
+</details>
+
+<details>
+<summary>Subsystem 3 circuit diagrams</summary>
 
 ![Subsystem 3 circuit diagram sheet 8](./Circuit%20Diagrams/Exported%20PNG/circuit-diagram-08-sheet-8-subsystem-3.png)
 
@@ -97,6 +100,18 @@ Milestone 1 produced a System Design Document containing:
 ![Subsystem 3 circuit diagram sheet 3 export 3](./Circuit%20Diagrams/Exported%20PNG/circuit-diagram-23-sheet-3-subsystem-3.png)
 
 ![Subsystem 3 circuit diagram sheet 3 export 4](./Circuit%20Diagrams/Exported%20PNG/circuit-diagram-24-sheet-3-subsystem-3.png)
+
+</details>
+
+## Run Context
+
+The code is hardware-facing. It expects the ENG1013 Arduino/breadboard setup, Python 3.10.x, Pymata4, and the assignment-approved hardware package. The repository preserves code as implementation evidence rather than as a software-only project that can be run without the physical build.
+
+## Limitations and Next Portfolio Updates
+
+- Add viva/reflection notes after Milestone 3 is complete.
+- Mark the project complete once final marking evidence and reflection artifacts are available.
+- Add a traceability matrix linking official feature IDs to code files, circuit sheets, and demonstration clips.
 
 ## Project Files
 
@@ -112,8 +127,3 @@ Milestone 1 produced a System Design Document containing:
 - [Demonstration video index](./Evidence/Videos/README.md)
 - [Original assignment specification](./Original%20Documents/ENG1013%20Traffic%20System%20Project%20Specification.pdf)
 - [Redacted Milestone 1 System Design Document](./Original%20Documents/TeamF16%20Milestone%201%20System%20Design%20Document%20-%20Redacted.pdf)
-
-## Next Portfolio Updates
-
-- Add viva/reflection notes after Milestone 3 is complete.
-- Update this folder from ongoing to complete once final marking evidence and reflection artifacts are available.

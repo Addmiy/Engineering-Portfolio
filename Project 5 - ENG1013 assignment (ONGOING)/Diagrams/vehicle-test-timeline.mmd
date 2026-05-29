@@ -1,0 +1,33 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#eef2ff", "tertiaryColor": "#ecfdf5", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart TB
+  classDef step fill:#eef2ff,stroke:#4f46e5,stroke-width:1.3px,color:#1e1b4b;
+  classDef signal fill:#ecfdf5,stroke:#047857,stroke-width:1.2px,color:#064e3b;
+  classDef fail fill:#fee2e2,stroke:#dc2626,stroke-width:1.2px,color:#7f1d1d;
+
+  Start["Vehicle enters approach model"]
+  Approach["Subsystem 1 measures approach height"]
+  Decision{"Over-height?"}
+
+  Normal["Normal traffic-light sequence continues"]
+  TunnelAveNormal["Subsystem 2 manages Tunnel Ave signals"]
+
+  Warn["Warning lights and driver alert"]
+  TunnelAveOver["Subsystem 2 manages Tunnel Ave and pedestrian logic"]
+  Exit["Subsystem 3 opens over-height exit route"]
+  TunnelCheck["Subsystem 4 final tunnel-height detection point"]
+  SafeStop["Unsafe tunnel entry prevented"]
+
+  Failure{"Tunnel-height detection power loss?"}
+  Alert["Subsystem 5 hardware-only failure alert"]
+  Demo["Recorded prototype demonstration evidence"]
+
+  Start --> Approach --> Decision
+  Decision -- No --> Normal --> TunnelAveNormal --> Demo
+  Decision -- Yes --> Warn --> TunnelAveOver --> Exit --> TunnelCheck --> SafeStop --> Demo
+  TunnelCheck --> Failure
+  Failure -- Yes --> Alert --> SafeStop
+  Failure -- No --> Demo
+
+  class Start,Approach,Decision,TunnelAveNormal,TunnelAveOver,Exit,TunnelCheck step;
+  class Normal,Warn,SafeStop,Demo signal;
+  class Failure,Alert fail;

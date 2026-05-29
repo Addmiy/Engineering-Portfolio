@@ -6,4 +6,6 @@
 *.jpeg binary
 
 *.drawio text eol=lf
+*.mmd text eol=lf
 *.md text eol=lf
+*.svg text eol=lf

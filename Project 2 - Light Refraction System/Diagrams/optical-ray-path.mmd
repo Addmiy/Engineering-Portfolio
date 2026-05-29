@@ -1,0 +1,27 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#e0f2fe", "tertiaryColor": "#fef9c3", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart LR
+  classDef optical fill:#e0f2fe,stroke:#0369a1,stroke-width:1.3px,color:#0c4a6e;
+  classDef mechanical fill:#fef9c3,stroke:#a16207,stroke-width:1.2px,color:#422006;
+  classDef evidence fill:#f8fafc,stroke:#334155,stroke-width:1.2px,color:#0f172a;
+
+  Input["Input light source"]
+  Alignment["Positioning and alignment mechanism"]
+  Refraction["Refraction interaction zone"]
+  OutputTrack["Light output track"]
+  Observation["Visible output path for explanation"]
+
+  CAD["Fusion 360 CAD revisions"]
+  BlockFlow["Block flow diagram"]
+  Flowchart["High-level flowchart"]
+  Report["Systems engineering report"]
+
+  Input --> Alignment --> Refraction --> OutputTrack --> Observation
+  CAD -. defines physical concept .-> Alignment
+  CAD -. defines output geometry .-> OutputTrack
+  BlockFlow -. explains subsystem relationships .-> Refraction
+  Flowchart -. explains process sequence .-> Observation
+  Report -. documents design reasoning .-> CAD
+
+  class Input,Refraction,OutputTrack,Observation optical;
+  class Alignment,CAD mechanical;
+  class BlockFlow,Flowchart,Report evidence;

@@ -1,48 +1,62 @@
 # Project 2 - Light Refraction System
 
-The Light Refraction System Tool is a systems engineering project focused on modelling, explaining, and communicating a light-path control system using diagrams, CAD models, technical documentation, and supporting design evidence.
+A systems engineering communication package for a light-path/refraction tool concept. The project focuses on making an optical/mechanical system understandable through reports, CAD revisions, block diagrams, and flowcharts.
 
-I organised the project around the full engineering workflow: defining the system, mapping the major functional blocks, developing physical CAD concepts, and documenting the resulting design in a concise project overview and full systems engineering report.
+## Review Summary
 
-This project demonstrates my ability to communicate a technical system clearly, connect conceptual design work to visual engineering evidence, and preserve design iterations in a structure that can be reviewed or extended later.
+| Field | Evidence |
+| --- | --- |
+| **Status** | Completed documentation and design-evidence case study |
+| **Built** | A reviewable systems package for a light refraction tool concept |
+| **Tools and materials** | Fusion 360 CAD models, Draw.io diagrams, systems engineering reports, flowcharts |
+| **Best evidence** | Full systems report, project overview PDF, light refraction block flow diagram, high-level flowchart, Fusion 360 model files |
+| **Main technical value** | System decomposition, visual communication, CAD iteration, and engineering portfolio organisation |
 
 ## Problem
 
-Light refraction systems can become difficult to explain when optical behaviour, mechanical positioning, and system-level interactions are documented separately. This project addresses that communication challenge by collecting the system overview, block diagrams, flowcharts, and CAD models into a single reviewable project folder.
+Light refraction concepts become harder to review when optical behaviour, mechanical positioning, and system interactions are documented separately. This project collects the system description, diagrams, CAD models, and report evidence into one reviewable folder.
 
 ## Solution
 
-The project combines systems documentation with supporting diagrams and CAD models. The report and overview explain the engineering intent, while the block flow diagram, high-level flowchart, and Fusion 360 design files provide visual evidence of how the system was structured and explored.
+The folder combines a project overview, full report, Draw.io block diagram, high-level flowchart, and Fusion 360 design revisions. Together, these files show how the system was structured, communicated, and iterated.
 
-## Technical Highlights
+![Light refraction block flow diagram](./Diagrams/Light%20Refraction%20Block%20Flow%20Diagram.drawio.png)
+
+![Optical ray-path diagram](./Diagrams/optical-ray-path.svg)
+
+## Technical Evidence
 
 - Created systems engineering documentation for a light refraction tool concept.
-- Produced a block flow diagram and high-level flowchart to communicate the system architecture.
-- Developed multiple Fusion 360 CAD model revisions for the physical design and track mechanisms.
-- Organised reports, diagrams, CAD models, and code revision references into a portfolio-ready project structure.
-- Preserved design evidence so the project can be reviewed as both a technical communication and engineering design exercise.
+- Built a block flow diagram to explain the system architecture.
+- Created a high-level flowchart to communicate the major process steps.
+- Preserved Fusion 360 model revisions for the physical design and track mechanisms.
+- Organised reports, diagrams, CAD files, and source availability notes into a portfolio-ready structure.
 
-## What I Accomplished
+![CAD revision comparison](./Diagrams/cad-revision-comparison.svg)
 
-- Converted a light refraction concept into a documented system design.
-- Built visual diagrams that clarify system behaviour and component relationships.
-- Explored physical design options through CAD modelling and revision history.
-- Created a project package suitable for engineering portfolio review.
+## What to Inspect First
 
-## Evidence
+- [Project overview](./Project%20Overview.pdf) - concise project explanation.
+- [Full systems engineering report](./Full%20Systems%20Engineering%20Report.pdf) - complete report evidence.
+- [Engineering design brief](./ENGINEERING_DESIGN_BRIEF.md) - objective, constraints, evidence, and improvements.
+- [Block flow diagram source](./Light%20Refraction%20Block%20Flow%20Diagram.drawio) - editable Draw.io source.
+- [Block flow diagram image](./Diagrams/Light%20Refraction%20Block%20Flow%20Diagram.drawio.png) - quick visual inspection.
+- [High-level flowchart](./Diagrams/Light%20Refraction%20-%20High%20Level%20Flowchart.png) - process communication.
+- [CAD models](./CAD%20Models/) - Fusion 360 design revisions.
+- [Code/source availability note](./Code%20Revisions/) - explains why the Windows shortcut is not useful as portable source evidence.
 
-Key evidence is included in the project files:
+## Limitations
 
-- System overview and full systems engineering report.
-- Light refraction block flow diagram.
-- High-level flowchart diagram.
-- Fusion 360 CAD models for the track and full design concepts.
+- The `Code Revisions` folder contains a Windows `.lnk` shortcut rather than portable source code. GitHub cannot use that shortcut as reviewable code evidence.
+- The CAD files are binary Fusion 360 files. They are valuable evidence, but GitHub does not preview them as readable source files.
+- A rendered optical ray-path diagram would make the project easier to understand without opening the full report.
 
 ## Project Files
 
 - [Project overview](./Project%20Overview.pdf)
 - [Full systems engineering report](./Full%20Systems%20Engineering%20Report.pdf)
+- [Engineering design brief](./ENGINEERING_DESIGN_BRIEF.md)
 - [Block flow diagram source](./Light%20Refraction%20Block%20Flow%20Diagram.drawio)
-- [CAD models](./CAD%20Modells/)
+- [CAD models](./CAD%20Models/)
 - [Diagrams](./Diagrams/)
 - [Code revisions](./Code%20Revisions/)

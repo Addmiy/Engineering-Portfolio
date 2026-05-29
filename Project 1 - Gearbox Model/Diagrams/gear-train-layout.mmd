@@ -1,0 +1,33 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#fff7ed", "tertiaryColor": "#ecfdf5", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart LR
+  classDef mechanical fill:#fff7ed,stroke:#c2410c,stroke-width:1.3px,color:#431407;
+  classDef support fill:#f8fafc,stroke:#334155,stroke-width:1.2px,color:#0f172a;
+  classDef evidence fill:#ecfdf5,stroke:#047857,stroke-width:1.2px,color:#064e3b;
+
+  Motor["Motor input shaft"]
+  InputGear["Input gear pair"]
+  Countershaft["Countershaft with meshing gears"]
+  Synchroniser["Sliding synchroniser mechanism"]
+  DriveShaft["Drive/output shaft"]
+  Output["Visible output-speed change"]
+
+  Base["Wooden casing and base"]
+  Bearings["Bearings and dowel shaft supports"]
+  PrintedGears["3D printed gears"]
+  DiagnosticTests["Diagnostic checks: stability, shaft straightness, gear meshing, synchroniser fit"]
+
+  Motor --> InputGear --> Countershaft --> Synchroniser --> DriveShaft --> Output
+
+  Base -. supports .-> Motor
+  Base -. supports .-> Countershaft
+  Base -. supports .-> DriveShaft
+  Bearings -. align .-> Countershaft
+  Bearings -. align .-> DriveShaft
+  PrintedGears -. mounted on .-> InputGear
+  PrintedGears -. mounted on .-> Countershaft
+  DiagnosticTests -. informed changes to .-> Synchroniser
+  DiagnosticTests -. informed changes to .-> PrintedGears
+
+  class Motor,InputGear,Countershaft,Synchroniser,DriveShaft,Output mechanical;
+  class Base,Bearings,PrintedGears support;
+  class DiagnosticTests evidence;

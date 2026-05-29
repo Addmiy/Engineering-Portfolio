@@ -1,0 +1,25 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#eef2ff", "tertiaryColor": "#ecfdf5", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart LR
+  classDef cad fill:#eef2ff,stroke:#4f46e5,stroke-width:1.3px,color:#1e1b4b;
+  classDef review fill:#ecfdf5,stroke:#047857,stroke-width:1.2px,color:#064e3b;
+  classDef limitation fill:#fff7ed,stroke:#c2410c,stroke-width:1.2px,color:#431407;
+
+  V1["Light output track system v1.f3d"]
+  V2["Angled rack and bevel track system - light output v2.f3d"]
+  V3["Full design option 1 copy v2.f3d"]
+  V4["Full design option 1 v4.f3d"]
+
+  Review["Reviewer goal: understand physical design progression"]
+  NeedRenders["Needed addition: PNG renders with short captions"]
+  GithubLimit["GitHub limitation: .f3d files are binary and do not preview as readable source"]
+
+  V1 --> V2 --> V3 --> V4 --> Review
+  GithubLimit -. affects .-> V1
+  GithubLimit -. affects .-> V2
+  GithubLimit -. affects .-> V3
+  GithubLimit -. affects .-> V4
+  Review --> NeedRenders
+
+  class V1,V2,V3,V4 cad;
+  class Review,NeedRenders review;
+  class GithubLimit limitation;

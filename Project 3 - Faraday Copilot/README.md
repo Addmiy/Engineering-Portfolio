@@ -1,53 +1,73 @@
 # Project 3 - Faraday Copilot
 
-Faraday Copilot is a Manifest V3 Chrome extension prototype for a browser-native AI copilot. It brings page-aware chat, highlighted-text actions, citations, Google Docs assistance, file-aware prompts, model switching, and a maths graphing workspace into the Chrome side panel and a fullscreen app view.
+A Manifest V3 Chrome extension prototype that embeds AI research, writing, citation, Google Docs, file, and graphing workflows into the browser side panel and a fullscreen workspace.
 
-This portfolio folder preserves the full development trail from the original local Chrome AI prototype through the OpenRouter-powered Faraday builds. The project is included to demonstrate practical Chrome extension engineering, AI API integration, user-interface iteration, state management, Google Docs integration experiments, and analytical tool building with vanilla JavaScript.
+## Review Summary
 
-## Portfolio contents
+| Field | Evidence |
+| --- | --- |
+| **Status** | Completed prototype archive with version history |
+| **Latest preserved build** | `Version History/09 - Faraday extension V8` |
+| **Stack** | JavaScript, HTML, CSS, Chrome Manifest V3, service workers, content scripts, OpenRouter API, Google Apps Script, `chrome.storage.local`, canvas graph rendering |
+| **Best evidence** | Source snapshots, technical architecture, employer summary, UI screenshots, code evidence excerpts, Mermaid diagrams |
+| **Main technical value** | Browser extension architecture, AI API integration, stateful product workflows, Google Docs extraction strategy, and custom graphing logic |
 
-- `Version History/` contains copied source snapshots for each discovered project version.
-- `Documentation/Project Overview.md` explains the project purpose, architecture, feature set, and engineering growth over time.
-- `Documentation/Version Evolution.md` documents the revision history and what changed between versions.
-- `Documentation/Design Brief.md` frames the project professionally for an employer or assessor.
-- `Documentation/Employer Summary.md` gives a fast reviewer-facing summary of skills and best files to inspect.
-- `Documentation/Technical Architecture.md` outlines the extension architecture, data flow, and major modules.
-- `Evidence/` contains UI screenshots and code evidence notes.
-- `Diagrams/` contains Mermaid source diagrams for the system architecture and version timeline.
+## What It Does
 
-## Final prototype snapshot
+Faraday Copilot brings page-aware AI assistance into Chrome. It can use page context and selected text, run writing/research/citation actions, store citation notes, switch models, work with files, support Google Docs through a companion script, and render mathematical graphing workflows.
 
-The latest preserved version is `Version History/09 - Faraday extension V8`. It includes:
+![V8 side panel tabs](./Evidence/Screenshots/ui-v8-side-panel-tabs.png)
 
-- Manifest V3 extension architecture with background service worker, content scripts, side panel, options page, popup, and fullscreen app page.
-- OpenRouter chat-completions integration with configurable model selection.
-- Page context extraction from standard webpages and structured Google Docs companion snapshots.
-- Highlight toolbar actions for explanation, summaries, questions, citations, flashcards, and notes.
-- Persistent chat, settings, file payloads, citation notebook, and graph expressions through `chrome.storage.local`.
-- A tabbed side-panel interface and rebuilt fullscreen workspace.
-- A custom graph engine with parsing, plotting, zoom/pan, intercept detection, stationary point detection, and multi-function intersections.
+## Technical Proof Points
 
-## Key evidence
+- Built the main Manifest V3 surfaces: background service worker, content scripts, side panel, popup, options page, and fullscreen app.
+- Integrated OpenRouter through an isolated API adapter with configurable model selection.
+- Designed message routing between the content script, background worker, side panel, fullscreen app, and storage layer.
+- Added page-context extraction from DOM metadata, headings, visible text, lists, tables, selected text, and Google Docs document IDs.
+- Implemented a Google Apps Script companion after discovering that normal Google Docs DOM extraction was unreliable.
+- Persisted settings, personalities, chat history, file payloads, citation notebook, page context, pending actions, and active views in `chrome.storage.local`.
+- Built a graphing subsystem with expression parsing, implicit multiplication, AST evaluation, canvas rendering, zoom/pan, roots, stationary points, and intersections.
+- Preserved a version trail that shows migration from local AI, OpenRouter adoption, Google Docs hardening, failed UI work, recovery, and V8 separation of fullscreen logic.
 
-![V8 side panel tabs](Evidence/Screenshots/ui-v8-side-panel-tabs.png)
+![Selected-text AI sequence](./Diagrams/selected-text-ai-sequence.svg)
 
-![V8 settings page](Evidence/Screenshots/ui-v8-settings.png)
+![Data and privacy boundary](./Diagrams/data-privacy-boundary.svg)
 
-More screenshots are in `Evidence/Screenshots/`, and implementation excerpts are in `Evidence/Code Evidence/engineering-excerpts.md`.
+![Graph engine pipeline](./Diagrams/graph-engine-pipeline.svg)
 
-## How to inspect or run the latest extension
+## What to Inspect First
+
+- [Employer summary](./Documentation/Employer%20Summary.md) - fastest evidence map for reviewers.
+- [Technical architecture](./Documentation/Technical%20Architecture.md) - architecture, modules, data flow, and security notes.
+- [Version evolution](./Documentation/Version%20Evolution.md) - why each version exists and what changed.
+- [Engineering evidence excerpts](./Evidence/Code%20Evidence/engineering-excerpts.md) - exact files that demonstrate the strongest implementation work.
+- [Latest V8 source](./Version%20History/09%20-%20Faraday%20extension%20V8/) - final preserved extension build.
+- [UI screenshots](./Evidence/Screenshots/) - side panel, settings, fullscreen workspace, and early local AI UI evidence.
+
+## Latest Build Snapshot
+
+The latest preserved version is [Version History/09 - Faraday extension V8](./Version%20History/09%20-%20Faraday%20extension%20V8/). Key files:
+
+- [`manifest.json`](./Version%20History/09%20-%20Faraday%20extension%20V8/manifest.json) - Manifest V3 permissions, surfaces, background worker, and content scripts.
+- [`background.js`](./Version%20History/09%20-%20Faraday%20extension%20V8/background.js) - orchestration, context menu actions, page context, settings, companion fetches, and AI request routing.
+- [`content-script.js`](./Version%20History/09%20-%20Faraday%20extension%20V8/content-script.js) - page interaction, text selection tools, DOM extraction, and Google Docs detection.
+- [`lib/openrouter.js`](./Version%20History/09%20-%20Faraday%20extension%20V8/lib/openrouter.js) - chat-completions API integration.
+- [`lib/storage.js`](./Version%20History/09%20-%20Faraday%20extension%20V8/lib/storage.js) - default settings and persistent extension state.
+- [`app.js`](./Version%20History/09%20-%20Faraday%20extension%20V8/app.js) - fullscreen workspace and graphing logic.
+- [`apps-script/Code.gs`](./Version%20History/09%20-%20Faraday%20extension%20V8/apps-script/Code.gs) - Google Docs companion script.
+
+## How to Inspect or Run
 
 1. Open Chrome and go to `chrome://extensions`.
 2. Enable `Developer mode`.
 3. Click `Load unpacked`.
 4. Select `Version History/09 - Faraday extension V8`.
-5. Open the extension settings and add an OpenRouter API key.
+5. Open extension settings and add an OpenRouter API key.
 6. Optional: deploy the included Apps Script companion from `apps-script/` and paste its `/exec` URL into settings for Google Docs extraction.
 
-## Prototype limitations
+## Limitations
 
-This project was developed as a personal engineering prototype, not a production release. The API key is stored locally in `chrome.storage.local`, the Google Docs integration depends on deployment/configuration of an Apps Script companion, and UI screenshots in this portfolio are static captures of extension pages rather than authenticated browser-extension runtime sessions.
-
-## Employer-facing summary
-
-Faraday Copilot shows the ability to take an idea from prototype to increasingly capable product: integrating AI services, designing Chrome extension messaging flows, building UI from scratch, managing client-side persistence, handling hostile third-party document surfaces, and iterating after failed interface experiments.
+- The API key is stored locally in `chrome.storage.local`; a production release should use a backend proxy.
+- The Google Docs workflow depends on user-deployed Apps Script configuration.
+- Screenshots are static evidence rather than automated extension test output.
+- Production hardening would need automated tests, response streaming, permissions minimisation, privacy policy text, and packaged Chrome Web Store distribution.

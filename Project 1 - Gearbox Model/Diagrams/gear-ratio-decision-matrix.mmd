@@ -1,0 +1,39 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#fee2e2", "tertiaryColor": "#dcfce7", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart TB
+  classDef decision fill:#eef2ff,stroke:#4f46e5,stroke-width:1.3px,color:#1e1b4b;
+  classDef constraint fill:#fff7ed,stroke:#c2410c,stroke-width:1.2px,color:#431407;
+  classDef outcomeKeep fill:#dcfce7,stroke:#15803d,stroke-width:1.2px,color:#14532d;
+  classDef outcomeChange fill:#fee2e2,stroke:#dc2626,stroke-width:1.2px,color:#7f1d1d;
+
+  Goal["Goal: demonstrate output-speed changes with visible gear pairs"]
+  RatioSet["Initial gear-ratio plan"]
+  ToothCounts["Tooth count choices"]
+  CentreDistance["Centre-distance and meshing"]
+  BearingFit["Bearing fit inside printed gears"]
+  PrintSize["Printable gear size"]
+  Safety["Classroom safety and handling"]
+
+  Keep["Retained: visible gear rotation, shaft layout, synchroniser concept"]
+  Change["Changed: removed or modified ratios that did not fit fabrication constraints"]
+  Lesson["Engineering lesson: check bearing fit, print size, and spacing before fabrication"]
+
+  Goal --> RatioSet
+  RatioSet --> ToothCounts
+  RatioSet --> CentreDistance
+  RatioSet --> BearingFit
+  RatioSet --> PrintSize
+  RatioSet --> Safety
+
+  ToothCounts --> Keep
+  CentreDistance --> Keep
+  Safety --> Keep
+  BearingFit --> Change
+  PrintSize --> Change
+  Change --> Lesson
+  Keep --> Lesson
+
+  class Goal,RatioSet decision;
+  class ToothCounts,CentreDistance,BearingFit,PrintSize,Safety constraint;
+  class Keep outcomeKeep;
+  class Change outcomeChange;
+  class Lesson decision;

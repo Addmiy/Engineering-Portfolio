@@ -1,0 +1,21 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "actorBkg": "#eef2ff", "actorBorder": "#4f46e5", "actorTextColor": "#1e1b4b", "signalColor": "#475569", "signalTextColor": "#0f172a", "activationBkgColor": "#ecfdf5", "activationBorderColor": "#047857", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+sequenceDiagram
+  autonumber
+  actor User as User in Chrome
+  participant Page as Web page
+  participant Content as content-script.js
+  participant Background as background.js service worker
+  participant Storage as chrome.storage.local
+  participant OpenRouter as OpenRouter API
+  participant Panel as Side panel or fullscreen app
+
+  User->>Page: Highlight text or choose action
+  Page->>Content: Selection and page metadata available
+  Content->>Content: Build page context and selected-text payload
+  Content->>Background: QUEUE_PANEL_ACTION or AI_REQUEST
+  Background->>Storage: Read settings, model, personality, files, history
+  Background->>OpenRouter: Send prompt, context, selection, and recent history
+  OpenRouter-->>Background: Return generated text and model metadata
+  Background->>Storage: Store chat message and action state
+  Background-->>Panel: Send response for rendering
+  Panel-->>User: Show answer, citation notes, or graph preview

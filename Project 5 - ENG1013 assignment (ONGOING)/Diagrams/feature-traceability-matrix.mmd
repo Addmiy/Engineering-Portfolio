@@ -1,0 +1,44 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#eef2ff", "tertiaryColor": "#ecfdf5", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart TB
+  classDef title fill:#0f172a,stroke:#0f172a,stroke-width:1.5px,color:#ffffff;
+  classDef requirement fill:#eef2ff,stroke:#4f46e5,stroke-width:1.3px,color:#1e1b4b;
+  classDef evidence fill:#ecfdf5,stroke:#047857,stroke-width:1.2px,color:#064e3b;
+  classDef circuit fill:#fef9c3,stroke:#a16207,stroke-width:1.2px,color:#422006;
+
+  Title["ENG1013 traceability map<br/>subsystem requirement to portfolio evidence"]
+
+  S1["S1 Approach height detection<br/>Purpose: detect over-height vehicles before the exit<br/>Code: integrated_subsystems_1_2.py and Integrated_Sub1+Sub4_Code/<br/>Evidence: subsystem flowchart, wiring guide, prototype photos"]
+  S2["S2 Tunnel Ave control<br/>Purpose: manage traffic lights and pedestrian crossing behaviour<br/>Code: integrated_subsystems_1_2.py, integrated_subsystems_2_3.py, Integrated_SUB2+SUB3.py<br/>Evidence: wiring guides, circuit PNG sheets, photos, demos"]
+  S3["S3 Over-height exit<br/>Purpose: route unsafe vehicles away from the tunnel<br/>Code: subsystem3_overheight_exit.py, integrated_subsystems_2_3.py, Integrated_SUB2+SUB3.py<br/>Evidence: Subsystem 3 wiring guide, circuit PNG sheets, videos"]
+  S4["S4 Tunnel entrance detection<br/>Purpose: final tunnel-height check and closure behaviour<br/>Code: Integrated_Sub1+Sub4_Code/<br/>Evidence: subsystem flowchart and integration source folder"]
+  S5["S5 Failure alert<br/>Purpose: hardware-only alert and override during detection power loss<br/>Circuit evidence: exported circuit PNG sheets and redacted circuit PDF<br/>Portfolio note: keep hardware-only behaviour traceable to photos/videos where available"]
+
+  CodeIndex["Code index<br/>Code/README.md"]
+  CircuitIndex["Circuit diagram index<br/>Circuit Diagrams/README.md"]
+  EvidenceIndex["Evidence index<br/>Evidence/README.md"]
+  DemoMedia["Photos and demonstration videos"]
+
+  Title --> S1
+  Title --> S2
+  Title --> S3
+  Title --> S4
+  Title --> S5
+
+  S1 --> CodeIndex
+  S2 --> CodeIndex
+  S3 --> CodeIndex
+  S4 --> CodeIndex
+  S2 --> CircuitIndex
+  S3 --> CircuitIndex
+  S5 --> CircuitIndex
+  S1 --> EvidenceIndex
+  S2 --> EvidenceIndex
+  S3 --> EvidenceIndex
+  S5 --> EvidenceIndex
+  EvidenceIndex --> DemoMedia
+  CircuitIndex --> DemoMedia
+
+  class Title title;
+  class S1,S2,S3,S4,S5 requirement;
+  class CodeIndex,EvidenceIndex,DemoMedia evidence;
+  class CircuitIndex circuit;

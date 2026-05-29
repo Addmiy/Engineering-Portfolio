@@ -1,0 +1,32 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#f8fafc", "primaryBorderColor": "#334155", "primaryTextColor": "#0f172a", "lineColor": "#475569", "secondaryColor": "#eef2ff", "tertiaryColor": "#ecfdf5", "fontFamily": "Inter, Segoe UI, Arial"}}}%%
+flowchart TB
+  classDef software fill:#eef2ff,stroke:#4f46e5,stroke-width:1.3px,color:#1e1b4b;
+  classDef hardware fill:#e0f2fe,stroke:#0369a1,stroke-width:1.2px,color:#0c4a6e;
+  classDef output fill:#ecfdf5,stroke:#047857,stroke-width:1.2px,color:#064e3b;
+  classDef fail fill:#fee2e2,stroke:#dc2626,stroke-width:1.2px,color:#7f1d1d;
+
+  Laptop["Laptop running Python 3.10 and Pymata4"]
+  Arduino["Arduino control board"]
+  Sensors["Ultrasonic sensors, LDRs, push buttons"]
+  Inputs["Height, vehicle presence, day/night, pedestrian request"]
+  Logic["Traffic-control and subsystem state logic"]
+  ShiftRegisters["74HC595 shift-register outputs"]
+  Lights["Traffic lights, pedestrian lights, warning lights, floodlights"]
+  Buzzers["Buzzer alerts"]
+  FailureAlert["Hardware-only failure alert and override path"]
+  Videos["Photos and demonstration videos"]
+
+  Sensors --> Inputs --> Arduino
+  Laptop <-->|serial control| Arduino
+  Laptop --> Logic --> Arduino
+  Arduino --> ShiftRegisters --> Lights
+  Arduino --> Buzzers
+  Arduino -. power loss condition .-> FailureAlert
+  FailureAlert --> Lights
+  Lights --> Videos
+  Buzzers --> Videos
+
+  class Laptop,Logic software;
+  class Arduino,Sensors,Inputs,ShiftRegisters hardware;
+  class Lights,Buzzers,Videos output;
+  class FailureAlert fail;

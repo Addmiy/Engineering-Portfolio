@@ -1,49 +1,60 @@
 # Project 1 - Gearbox Model
 
-The Gearbox Model is a VCE systems engineering project focused on designing, building, testing, and evaluating a classroom learning tool for mechanical gear ratios and gearbox behaviour.
+A physical systems engineering project that turns gearbox behaviour into a visible classroom model. The build demonstrates gear meshing, gear-ratio tradeoffs, shaft alignment, and synchroniser-style movement using low-cost fabricated parts.
 
-The project began with a broader multifunction tool idea, then shifted toward a safer and more teachable model gearbox. The final portfolio folder keeps the original systems report, a concise overview PDF, generated system diagrams, and extracted design evidence from the report.
+## Review Summary
+
+| Field | Evidence |
+| --- | --- |
+| **Status** | Completed portfolio case study |
+| **Built** | Low-cost model gearbox prototype for teaching mechanical gear ratios and output-speed changes |
+| **Tools and materials** | Fusion 360, 3D printed gears, wood, dowels, bearings, motor, handmade synchroniser components, workshop fabrication |
+| **Best evidence** | Full systems report, project overview PDF, CAD renders, block flow diagram, high-level flowchart, gear-ratio planning map |
+| **Main technical value** | Mechanical design reasoning, constraint handling, diagnostic testing, and clear systems documentation |
 
 ## Problem
 
-Students can find gearbox speed changes difficult to understand when the gears, shafts, and synchroniser are hidden inside real machinery. This project addresses that learning gap by making the gear train visible and by documenting how gear ratios, shaft alignment, and synchroniser engagement affect the output.
+Gearbox speed changes are difficult to understand when the gears, shafts, and synchroniser are hidden inside real machinery. The project addresses that learning gap by making the gear train visible enough for classroom explanation.
 
 ## Solution
 
-The selected solution is a low-cost model gearbox made from 3D printed gears, wood, dowels, bearings, and a handmade synchroniser system. The model is designed for classroom explanation rather than heavy-duty power transfer, with safety, cost, and visibility treated as key constraints.
+The selected design is a model gearbox built from 3D printed gears, a wooden base/casing, dowel shafts, bearings, and a sliding synchroniser concept. The prototype prioritises visibility, cost control, and safe demonstration over high-load power transfer.
 
-## Technical Highlights
+![Gearbox CAD concept render](./CAD%20Models/Gearbox%20CAD%20Concept%20Render.png)
 
-- Compared a multifunction sanding/cleaning tool against a model gearbox and selected the safer learning-tool concept.
-- Modelled gear pairs and shaft layout in Fusion 360 before fabrication.
-- Planned gear ratios around tooth counts and centre-distance constraints.
-- Used 3D printed gears, a wooden casing/base, dowel shafts, bearings, and PVC/straw synchroniser components.
-- Ran diagnostic tests for base stability, shaft straightness, gear meshing, synchroniser fit, and gear-pair spacing.
-- Documented design modifications when some planned ratios could not be printed or could not fit bearings.
+![Gear train layout](./Diagrams/gear-train-layout.svg)
 
-## What I Accomplished
+## Technical Evidence
 
-- Turned a mechanical teaching need into a physical model gearbox prototype.
-- Created and evaluated a visible gear-train system with motor shaft, countershaft, drive shaft, and synchroniser subsystems.
-- Used test evidence to justify changes to gear ratios, dowel fit, and synchroniser design.
-- Produced a portfolio-ready package containing the full report, overview, generated diagrams, and extracted design evidence.
+- Compared a multifunction sanding/cleaning tool against a model gearbox and selected the safer, clearer learning-tool concept.
+- Modelled the gear layout in Fusion 360 before fabrication.
+- Planned gear ratios against tooth count, bearing fit, printable gear size, and centre-distance constraints.
+- Built the prototype with 3D printed gears, wood, dowels, bearings, and handmade synchroniser components.
+- Ran diagnostic checks for base stability, shaft straightness, gear meshing, synchroniser fit, and gear-pair spacing.
+- Documented design modifications when print size, bearing fit, and gear spacing limited the original ratio plan.
 
-## Evidence
+![Gear-ratio decision matrix](./Diagrams/gear-ratio-decision-matrix.svg)
 
-Key evidence is included in the project files:
+## What to Inspect First
 
-- Project overview and full systems engineering report.
-- Gearbox block flow diagram and high-level project flowchart.
-- Subsystem brainstorm map and gear-ratio planning map.
-- Extracted CAD render evidence from the report.
-- Notes on CAD and code/source availability for this mechanical project.
+- [Full systems engineering report](./Full%20Systems%20Engineering%20Report.pdf) - complete project reasoning and test evidence.
+- [Project overview](./Project%20Overview.pdf) - shorter reviewer-facing overview.
+- [Engineering design brief](./ENGINEERING_DESIGN_BRIEF.md) - objective, users, requirements, constraints, outcome, and improvements.
+- [Block flow diagram image](./Diagrams/Gearbox%20Model%20Block%20Flow%20Diagram.drawio.png) - system-level structure.
+- [High-level project flowchart](./Diagrams/Gearbox%20Model%20-%20High%20Level%20Flowchart.png) - process flow.
+- [CAD evidence](./CAD%20Models/) - extracted design renders from the report.
+
+## Limitations
+
+- The original source CAD files were not supplied with the report package. This folder preserves extracted CAD image evidence instead.
+- No separate software listings were supplied because this was primarily a mechanical systems project.
+- Some planned gear ratios were removed after fabrication constraints around print size, bearings, and spacing became clear.
 
 ## Project Files
 
 - [Project overview](./Project%20Overview.pdf)
 - [Full systems engineering report](./Full%20Systems%20Engineering%20Report.pdf)
-- [Block flow diagram source](./Gearbox%20Model%20Block%20Flow%20Diagram.drawio)
 - [Engineering design brief](./ENGINEERING_DESIGN_BRIEF.md)
-- [CAD evidence](./CAD%20Modells/)
+- [CAD evidence](./CAD%20Models/)
 - [Diagrams](./Diagrams/)
-- [Code revisions](./Code%20Revisions/)
+- [Code/source availability note](./Code%20Revisions/)
